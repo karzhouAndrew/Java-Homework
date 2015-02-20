@@ -1,4 +1,4 @@
-package homework.task_4;
+package workbook.task_4;
 
 /**
  * Created by Алексей Андреенко on 05.02.2015.
