@@ -2,6 +2,8 @@ package blinov.lab12;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 /**
  * Из текста удалить все слова заданной длины, начинающиеся на согласную букву
  */
