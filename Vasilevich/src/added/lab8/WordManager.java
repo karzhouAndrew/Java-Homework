@@ -20,24 +20,17 @@ public class WordManager {
         this.sentense = sentense;
     }
 
-    public int getSentenseCount(){
+    public int getSentenseCount() {
         int sentensCount = sentense.split("\\.").length;
         return sentensCount;
     }
 
-    public String[] SplitSentenses(){
-
-
-
-        return sentense.split("\\.");
-    }
-
-    public int getNumWordsInSentense(int sentInd ){
+    public int getNumWordsInSentense(int sentInd) {
         String strSent = sentense.split("\\.")[sentInd];
-        return strSent.split(" +").length;
+        return strSent.trim().split(" +"). length;
     }
 
-    public String getSentense(int sentInd ){
-        return sentense.split("\\.")[sentInd];
+    public String getSentense(int sentInd) {
+        return (sentense.split("\\.")[sentInd] + '.');
     }
 }
