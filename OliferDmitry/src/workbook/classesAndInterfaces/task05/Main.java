@@ -20,3 +20,19 @@ public class Main {
         tvSet2.turnOff();
     }
 }
+/*Console output:
+Phillips(PS-32) is turned OFF
+LG(42-D11) is turned OFF
+IBM(AT-286) is turned OFF
+HP(Pavilion dm3) is turned OFF
+Samsung(Galaxy S+) is turned OFF
+Nokia(8606) is turned OFF
+Atlant(...) is turned OFF
+Indesit(...) is turned OFF
+
+Phillips(PS-32) is turned ON
+Samsung(Galaxy S+) is turned ON
+Nokia(8606) is turned ON
+Atlant(...) is turned ON
+
+LG(42-D11) is turned OFF*/
