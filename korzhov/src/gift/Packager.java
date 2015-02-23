@@ -7,13 +7,12 @@ import java.util.Random;
  */
 public class Packager {
 
+    private final NamesGenerator namesGenerator = new NamesGenerator();
     private String name;
-    private String[] names = {"Valera","Petya","Taras","Prokop"};
     private int level;
 
     public Packager() {
-        Random random = new Random();
-        name = names[random.nextInt(names.length)];
+        name = NamesGenerator.generateName();
     }
 
     public Packager(String name, int level) {
