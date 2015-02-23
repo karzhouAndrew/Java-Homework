@@ -1,8 +1,5 @@
 package classwork.class4;
 
-/**
- * Created by MTK on 23.02.2015.
- */
 public class Main {
     public static void main(String[] args) {
 
