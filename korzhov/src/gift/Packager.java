@@ -1,12 +1,20 @@
 package gift;
 
+import java.util.Random;
+
 /**
  * Created by user on 23.02.2015.
  */
 public class Packager {
 
     private String name;
+    private String[] names = {"Valera","Petya","Taras","Prokop"};
     private int level;
+
+    public Packager() {
+        Random random = new Random();
+        name = names[random.nextInt(names.length)];
+    }
 
     public Packager(String name, int level) {
         this.name = name;
@@ -21,5 +29,11 @@ public class Packager {
         return gift;
     }
 
-
+    @Override
+    public String toString() {
+        return "Packager{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                '}';
+    }
 }

@@ -8,5 +8,6 @@ public class GiftTest {
         Packager packager = new Packager("Valera", 80);
         Gift gift = packager.createGift(2);
         System.out.println(gift.getWeight());
+
     }
 }
