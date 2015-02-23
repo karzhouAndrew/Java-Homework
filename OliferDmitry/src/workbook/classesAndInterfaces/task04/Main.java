@@ -5,6 +5,7 @@ public class Main {
         ATM atm1 = new ATM(300, 300, 300);
         atm1.addMoney(5,1,1);
         atm1.getMoney(1680);
+
     }
 }
 /*
