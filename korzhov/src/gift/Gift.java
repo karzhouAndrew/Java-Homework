@@ -22,7 +22,12 @@ public class Gift {
         items[quantityAddedItems++] = confection;
     }
 
-    public Confection[] getItems() {
-        return items;
+    public int getWeight() {
+        int totalWeight = 0;
+        for (Confection confection : items) {
+            totalWeight += confection.getWeight();
+        }
+        return totalWeight;
     }
+
 }

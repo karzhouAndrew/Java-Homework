@@ -21,11 +21,5 @@ public class Packager {
         return gift;
     }
 
-    public int weightGift(Gift gift) {
-        int totalWeight = 0;
-        for (Confection confection : gift.getItems()) {
-            totalWeight += confection.getWeight();
-        }
-        return totalWeight;
-    }
+
 }
