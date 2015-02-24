@@ -1,7 +1,7 @@
 package classwork.class4;
 
-import java.security.SecureRandom;
-import java.math.BigInteger;
+import java.util.Date;
+import java.util.Random;
 
 public class Employee {
     private String name;
@@ -42,23 +42,18 @@ public class Employee {
     }
 
     public Employee() {
-    }
-
-    public Employee(String name, String surname, String birthday, String date_work) {
-        SecureRandom random = new SecureRandom();
-        this.name = new BigInteger(130, random).toString(32);
-        this.surname = new BigInteger(130, random).toString(32);
-        this.birthday = birthday;
-        this.date_work = date_work;
+        Random rnd = new Random();
+        this.name =  NameGenerator.generateName();
+        this.surname = NameGenerator.generateSurname();
+        this.birthday = "02.06.1980";
+        this.date_work = "02.02.2015";
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
+        return "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthday='" + birthday + '\'' +
-                ", date_work='" + date_work + '\'' +
-                '}';
+                ", date_work='" + date_work;
     }
 }
