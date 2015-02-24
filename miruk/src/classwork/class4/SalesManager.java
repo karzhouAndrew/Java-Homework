@@ -24,6 +24,6 @@ public class SalesManager extends Employee {
 
     @Override
     public String toString() {
-        return "SalesManager: " + super.toString() + "numberTeam=" + numberTeam;
+        return "SalesManager: " + super.toString() + " , numberTeam=" + numberTeam;
     }
 }

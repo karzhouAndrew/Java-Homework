@@ -24,6 +24,6 @@ public class TeamLeader extends Employee {
 
     @Override
     public String toString() {
-        return "Developer: " + super.toString() + "numberTeam" + numberTeam;
+        return "TeamLeader: " + super.toString() + " , numberTeam=" + numberTeam;
     }
 }

@@ -51,9 +51,9 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", date_work='" + date_work;
+        return "name=" + name +
+                ", surname=" + surname +
+                ", birthday=" + birthday +
+                ", date_work=" + date_work;
     }
 }
