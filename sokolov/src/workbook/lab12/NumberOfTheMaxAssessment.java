@@ -14,13 +14,17 @@ public class NumberOfTheMaxAssessment {
         System.out.println("List of estimates: ");
         for (int i = 0; i < n; i++) {
             System.out.print(marks[i] + " ");
-            if (marks[i] > marks[maxNum]) maxNum = i;
+            if (marks[i] > marks[maxNum]) {
+                maxNum = i;
+            }
         }
         System.out.print("\nNumber of the maximum assessment: ");
-        for (int i = maxNum; i < n; i++)
-            if (marks[i] == marks[maxNum])
+        for (int i = maxNum; i < n; i++) {
+            if (marks[i] == marks[maxNum]) {
                 System.out.print(" " + (i + 1));
+            }
+        }
     }
 }
-		
+
 			

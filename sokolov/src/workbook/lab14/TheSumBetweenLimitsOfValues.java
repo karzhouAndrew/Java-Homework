@@ -17,15 +17,21 @@ public class TheSumBetweenLimitsOfValues {
         System.out.println("array: ");
         for (int i = 0; i < n; i++) {
             System.out.print(massif[i] + " ");
-            if (massif[i] < massif[min]) min = i;
-            if (massif[i] > massif[max]) max = i;
+            if (massif[i] < massif[min]) {
+                min = i;
+            }
+            if (massif[i] > massif[max]) {
+                max = i;
+            }
         }
         if (min < max) {
-            for (int i = min; i <= max; i++)
+            for (int i = min; i <= max; i++) {
                 sum += massif[i];
+            }
         } else {
-            for (int i = min; i >= max; i--)
+            for (int i = min; i >= max; i--) {
                 sum += massif[i];
+            }
         }
         System.out.println("\nThe sum of elements between minimum and maximum (first) values = " + sum);
     }
