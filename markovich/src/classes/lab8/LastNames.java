@@ -1,0 +1,5 @@
+package classes.lab8;
+
+public enum LastNames {
+    JAKUB, MAREK, RADKO, LADISLAV, TOMAS, MICHAL, ROMAN, ONDREY, ZBYNEK, LUKAS, PATRIK, JAROMIR, ALES, PETR
+}
