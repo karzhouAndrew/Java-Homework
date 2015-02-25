@@ -1,6 +1,6 @@
 package classes.lab8;
 
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Random;
 
 public abstract class Person {
@@ -8,8 +8,8 @@ public abstract class Person {
 
     private String FirstName;
     private String LastName;
-    private Date BirthDate;
-    private Date HireDate;
+    private Calendar BirthDate;
+    private Calendar HireDate;
 
     public Person() {
         FirstName = setFirstName();
@@ -35,8 +35,7 @@ public abstract class Person {
     @Override
     public String toString() {
         return "FullName = " + getFullName() +
-                ", BirthDate = " + BirthDate +
-                ", HireDate =  " + HireDate +
-                '}';
+                ", BirthDate = " + RandomDate.getBirthDay(BirthDate) +
+                ", HireDate = " + RandomDate.getHireDay(HireDate);
     }
 }
