@@ -7,10 +7,9 @@ package added.lab1;
 public class SumFloatPart {
     public static void main(String[] args) {
         double val = 213.1389;
-        int val1, val2, val3;
-        val1 = (int) (val * 10) % 10;
-        val2 = (int) (val * 100) % 10;
-        val3 = (int) (val * 1000) % 10;
+        int val1 = (int) (val * 10) % 10;
+        int val2 = (int) (val * 100) % 10;
+        int val3 = (int) (val * 1000) % 10;
         int sum = val1 + val2 + val3;
         System.out.println("Result = " + sum);
     }
