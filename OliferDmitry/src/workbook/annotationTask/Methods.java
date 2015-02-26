@@ -7,7 +7,6 @@ public class Methods {
     public static void method1(){
         System.out.println("This is a method without annotation");
     }
-
     @Transaction
     public static void method2(){
         System.out.println("his is a method with annotation");
