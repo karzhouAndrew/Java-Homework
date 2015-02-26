@@ -7,7 +7,6 @@ public class Atm {
     private int banknote20;
     private int banknote50;
     private int banknote100;
-    private int cashBank;
     private String text = "Доступны банкноты номиналом 20, 50, 100";
 
 
@@ -92,7 +91,7 @@ public class Atm {
 
 
     public boolean transaction(int input, int cashClient) {
-        cashBank = banknote100 * 100 + banknote50 * 50 + banknote20 * 20;
+        int cashBank = banknote100 * 100 + banknote50 * 50 + banknote20 * 20;
         if (cashClient >= input && input <= cashBank && (input % 100 % 50 % 20) == 0) {
             int temp;
             temp = (input - input % 100) / 100;

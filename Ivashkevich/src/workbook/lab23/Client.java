@@ -15,6 +15,7 @@ public class Client {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите пин код клиента ");
         inPin = in.nextInt();
+        in.close();
     }
 
     public void withdrawMoney(Atm atm) {
@@ -23,6 +24,7 @@ public class Client {
             Scanner in = new Scanner(System.in);
             System.out.print("Введите сумму для снятия: ");
             input = in.nextInt();
+            in.close();
             if (atm.inputStatus(input)) {
                 if (atm.transaction(input, cashClient)) {
                     cashClient -= input;
@@ -57,6 +59,7 @@ public class Client {
             Scanner in = new Scanner(System.in);
             System.out.print("Введите сумму для вклада: ");
             input = in.nextInt();
+            in.close();
             if (pin == inPin) {
                 cashClient += input;
                 System.out.println("Операция проведена успешно");
