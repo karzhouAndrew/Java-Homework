@@ -3,10 +3,10 @@ package workbook.lab17;
 
 public class TextManager {
 
-    private int n = 0;
-    private int word = 1;
 
     public void searchWord(String text) {
+        int n = 0;
+        int word = 1;
         text = text.trim();
         while (n != -1) {
             int temp = n;
