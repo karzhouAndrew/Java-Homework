@@ -14,7 +14,7 @@ public class TestAnnotation {
             if (method.isAnnotationPresent(Transaction.class)) {
                 System.out.println("Transaction is started");
                 method.invoke(clazz.newInstance());
-                System.out.println("Transaction is started");
+                System.out.println("Transaction is ended");
             }
         }
     }
