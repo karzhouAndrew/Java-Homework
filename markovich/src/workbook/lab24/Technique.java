@@ -7,8 +7,7 @@ public class Technique {
     private boolean plugged;
 
     public Technique() {
-        brandName = setBrandName();
-        plugged = false;
+        brandName = generateBrandName();
     }
 
     public boolean includingTechnicians() {
@@ -17,7 +16,7 @@ public class Technique {
         return plugged;
     }
 
-    public String setBrandName() {
+    public String generateBrandName() {
         Random random = new Random();
         return BrandNames.values()[random.nextInt(BrandNames.values().length)].toString();
     }

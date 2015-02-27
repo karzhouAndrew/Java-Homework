@@ -3,14 +3,14 @@ package workbook.lab24;
 import java.util.Random;
 
 public class Refrigerator extends Technique {
-    String refrigeratorModel;
+    private String refrigeratorModel;
 
     public Refrigerator() {
-        refrigeratorModel = setRefrigeratorModel();
+        refrigeratorModel = generateRefrigeratorModel();
         System.out.println(this);
     }
 
-    public String setRefrigeratorModel() {
+    public String generateRefrigeratorModel() {
         Random random = new Random();
         return RefrigeratorModels.values()[random.nextInt(RefrigeratorModels.values().length)].toString();
     }

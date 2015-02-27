@@ -3,14 +3,14 @@ package workbook.lab24;
 import java.util.Random;
 
 public class TV extends Technique {
-    String TVModel;
+    private String TVModel;
 
     public TV() {
-        TVModel = setTVModel();
+        TVModel = generateTVModel();
         System.out.println(this);
     }
 
-    public String setTVModel() {
+    public String generateTVModel() {
         Random random = new Random();
         return TVModels.values()[random.nextInt(TVModels.values().length)].toString();
     }
