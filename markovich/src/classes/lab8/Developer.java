@@ -7,11 +7,11 @@ public class Developer extends Person {
     private String technology;
 
     public Developer() {
-        technology = setTechnology();
+        technology = generateTechnology();
         System.out.println(this);
     }
 
-    public String setTechnology() {
+    public String generateTechnology() {
         Random random = new Random();
         return Technology.values()[random.nextInt(Technology.values().length)].toString();
     }

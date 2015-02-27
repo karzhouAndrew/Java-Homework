@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class RandomDate {
-    public static Calendar setRandomBirthDate() {
+    public static Calendar getRandomBirthDate() {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         int year = randBetween(1950, 1998);
         gregorianCalendar.set(gregorianCalendar.YEAR, year);
@@ -23,7 +23,7 @@ public class RandomDate {
         }
     }
 
-    public static Calendar setRandomHireDate() {
+    public static Calendar getRandomHireDate() {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         int year = randBetween(2000, gregorianCalendar.get(gregorianCalendar.YEAR));
         gregorianCalendar.set(gregorianCalendar.YEAR, year);
@@ -41,13 +41,13 @@ public class RandomDate {
         }
     }
 
-    public static String getBirthDay(Calendar birthDay) {
+    public static String getFormatRandomBirthDay(Calendar birthDay) {
         SimpleDateFormat calendarParse = new SimpleDateFormat("dd MMM yyyy");
         String strBirthDay = calendarParse.format(birthDay.getTime());
         return strBirthDay;
     }
 
-    public static String getHireDay(Calendar hireDay) {
+    public static String getFormatRandomHireDay(Calendar hireDay) {
         SimpleDateFormat calendarParse = new SimpleDateFormat("dd MMM yyyy");
         String strHireDay = calendarParse.format(hireDay.getTime());
         return strHireDay;

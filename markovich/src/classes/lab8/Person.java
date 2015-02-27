@@ -6,36 +6,36 @@ import java.util.Random;
 public abstract class Person {
     public static boolean directorExist;
 
-    private String FirstName;
-    private String LastName;
-    private Calendar BirthDate;
-    private Calendar HireDate;
+    private String firstName;
+    private String lastName;
+    private Calendar birthDate;
+    private Calendar hireDate;
 
     public Person() {
-        FirstName = setFirstName();
-        LastName = setLastName();
-        BirthDate = RandomDate.setRandomBirthDate();
-        HireDate = RandomDate.setRandomHireDate();
+        firstName = generateFirstName();
+        lastName = generateLastName();
+        birthDate = RandomDate.getRandomBirthDate();
+        hireDate = RandomDate.getRandomHireDate();
     }
 
-    public String setFirstName() {
+    public String generateFirstName() {
         Random random = new Random();
         return FirstNames.values()[random.nextInt(FirstNames.values().length)].toString();
     }
 
-    public String setLastName() {
+    public String generateLastName() {
         Random random = new Random();
         return LastNames.values()[random.nextInt(LastNames.values().length)].toString();
     }
 
     public String getFullName() {
-        return this.FirstName + " " + this.LastName;
+        return this.firstName + " " + this.firstName;
     }
 
     @Override
     public String toString() {
         return "FullName = " + getFullName() +
-                ", BirthDate = " + RandomDate.getBirthDay(BirthDate) +
-                ", HireDate = " + RandomDate.getHireDay(HireDate);
+                ", BirthDate = " + RandomDate.getFormatRandomBirthDay(birthDate) +
+                ", HireDate = " + RandomDate.getFormatRandomHireDay(hireDate);
     }
 }
