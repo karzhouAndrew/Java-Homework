@@ -7,27 +7,17 @@ import java.util.Scanner;
  */
 public class Lab10 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("\nВведите число:  ");
-        int number = input.nextInt();
-        int j = 0;
-        System.out.println("\nданное число    " + number + " делится без остатка на:");
-        System.out.print('\n');
-        for (int i = 1; i <= number; i++) {
+        double number = 0;
+        InputNumber inputNumber = new InputNumber();
+        number = inputNumber.inputNumber();
+        for (double i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
-                if (i != 1 || i != number) {
-                    j = j + 1;
-                    System.out.print("  " + i);
-                }
+                System.out.println("не является простым");
+                break;
             }
-        }
-        System.out.println('\n');
-        if (j <= 2) {
-            System.out.println("является простым");
-        } else {
-            System.out.println("не является простым");
         }
     }
 }
+
 
 
