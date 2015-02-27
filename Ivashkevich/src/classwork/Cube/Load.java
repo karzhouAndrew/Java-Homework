@@ -16,6 +16,7 @@ public class Load {
         Scanner input = new Scanner(System.in);
         System.out.print("\nВведите длинну стороны куба: ");
         double side = input.nextDouble();
+        input.close();
 
         CubeManager cubeManager = new CubeManager();
         cubeManager.changeColor(cube);
