@@ -6,6 +6,6 @@ package classwork.Cube;
 public class CubeManager {
 
     public void changeColor(Cube cube) {
-        cube.setColor("Rad");
+        cube.setColor("Red");
     }
 }

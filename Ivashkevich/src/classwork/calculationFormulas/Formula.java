@@ -6,7 +6,7 @@ import static java.lang.Math.*;
  * Created by Leonid on 17.02.2015.
  */
 public class Formula {
-    double y;
+
 
     public void formula(double x) {
         //numerator
@@ -17,7 +17,7 @@ public class Formula {
         double d = cos(PI * pow(x, 3));
         double e = log(pow((1 + x), 2));
 
-        y = pow((a + b + c), 0.25) / pow((d + e), sin(x));
+        double y = pow((a + b + c), 0.25) / pow((d + e), sin(x));
         System.out.println("Ответ " + y);
     }
 }
