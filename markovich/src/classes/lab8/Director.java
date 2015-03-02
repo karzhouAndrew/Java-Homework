@@ -7,6 +7,7 @@ public class Director extends Person {
             directorExist = true;
         } else {
             System.out.println("The company already has a director!");
+
         }
     }
 
