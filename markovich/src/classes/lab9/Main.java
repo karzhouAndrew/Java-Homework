@@ -7,7 +7,7 @@ public class Main {
         inspectMethod(AnalyzeMethod.class);
     }
 
-    static void inspectMethod(Class<?> analyze) {
+    private static void inspectMethod(Class<?> analyze) {
         Class<AnalyzeMethod> clazz = AnalyzeMethod.class;
         for (Method method : clazz.getMethods()) {
             if (method.isAnnotationPresent(Transaction.class)) {
@@ -18,5 +18,4 @@ public class Main {
             }
         }
     }
-
 }
