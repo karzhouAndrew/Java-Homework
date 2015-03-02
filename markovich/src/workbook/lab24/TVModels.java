@@ -1,0 +1,5 @@
+package workbook.lab24;
+
+public enum TVModels {
+    UN32EH4003, UN22F5000, UN19F4000, KDL40W600B, UN50EH5000, KDL48W600B
+}

@@ -1,0 +1,5 @@
+package workbook.lab24;
+
+public enum RefrigeratorModels {
+    B22CS30SNS, KFCS22EVMS, VCFF236, FGHC2331PF, EI23BC35KS, FGHC2355PF, KFCP22EXMP, KANS20ELMS
+}
