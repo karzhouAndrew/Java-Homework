@@ -13,6 +13,8 @@ public class Main {
             if (method.isAnnotationPresent(Transaction.class)) {
                 System.out.println(method.getName() + " is started");
                 System.out.println(method.getName() + " is ended");
+            } else {
+                System.out.println("Method not found");
             }
         }
     }
