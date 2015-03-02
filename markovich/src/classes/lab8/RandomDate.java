@@ -6,15 +6,14 @@ import java.util.GregorianCalendar;
 
 public class RandomDate {
     public static Calendar getRandomBirthDate() {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
+        Calendar calendar = Calendar.getInstance();
         int year = randBetween(1950, 1998);
-        gregorianCalendar.set(gregorianCalendar.YEAR, year);
-        int dayOfYear = randBetween(1, gregorianCalendar.getActualMaximum(gregorianCalendar.DAY_OF_YEAR));
-        gregorianCalendar.set(gregorianCalendar.DAY_OF_YEAR, dayOfYear);
-        String stringDate = (gregorianCalendar.get(gregorianCalendar.YEAR) + "-" + gregorianCalendar.get(gregorianCalendar.MONTH) + "-" + gregorianCalendar.get(gregorianCalendar.DAY_OF_MONTH));
+        calendar.set(calendar.YEAR, year);
+        int dayOfYear = randBetween(1, calendar.getActualMaximum(calendar.DAY_OF_YEAR));
+        calendar.set(calendar.DAY_OF_YEAR, dayOfYear);
+        String stringDate = (calendar.get(calendar.YEAR) + "-" + calendar.get(calendar.MONTH) + "-" + calendar.get(calendar.DAY_OF_MONTH));
         try {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd");
-            Calendar calendar = Calendar.getInstance();
             calendar.setTime(format.parse(stringDate));
             return calendar;
         } catch (Exception e) {
@@ -24,15 +23,14 @@ public class RandomDate {
     }
 
     public static Calendar getRandomHireDate() {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        int year = randBetween(2000, gregorianCalendar.get(gregorianCalendar.YEAR));
-        gregorianCalendar.set(gregorianCalendar.YEAR, year);
-        int dayOfYear = randBetween(1, gregorianCalendar.getActualMaximum(gregorianCalendar.DAY_OF_YEAR));
-        gregorianCalendar.set(gregorianCalendar.DAY_OF_YEAR, dayOfYear);
-        String stringDate = (gregorianCalendar.get(gregorianCalendar.YEAR) + "-" + gregorianCalendar.get(gregorianCalendar.MONTH) + "-" + gregorianCalendar.get(gregorianCalendar.DAY_OF_MONTH));
+        Calendar calendar = Calendar.getInstance();
+        int year = randBetween(2000, calendar.get(calendar.YEAR));
+        calendar.set(calendar.YEAR, year);
+        int dayOfYear = randBetween(1, calendar.getActualMaximum(calendar.DAY_OF_YEAR));
+        calendar.set(calendar.DAY_OF_YEAR, dayOfYear);
+        String stringDate = (calendar.get(calendar.YEAR) + "-" + calendar.get(calendar.MONTH) + "-" + calendar.get(calendar.DAY_OF_MONTH));
         try {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd");
-            Calendar calendar = Calendar.getInstance();
             calendar.setTime(format.parse(stringDate));
             return calendar;
         } catch (Exception e) {
@@ -43,14 +41,12 @@ public class RandomDate {
 
     public static String getFormatRandomBirthDay(Calendar birthDay) {
         SimpleDateFormat calendarParse = new SimpleDateFormat("dd MMM yyyy");
-        String strBirthDay = calendarParse.format(birthDay.getTime());
-        return strBirthDay;
+        return calendarParse.format(birthDay.getTime());
     }
 
     public static String getFormatRandomHireDay(Calendar hireDay) {
         SimpleDateFormat calendarParse = new SimpleDateFormat("dd MMM yyyy");
-        String strHireDay = calendarParse.format(hireDay.getTime());
-        return strHireDay;
+        return calendarParse.format(hireDay.getTime());
     }
 
     public static int randBetween(int start, int end) {

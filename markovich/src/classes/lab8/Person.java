@@ -18,12 +18,12 @@ public abstract class Person {
         hireDate = RandomDate.getRandomHireDate();
     }
 
-    public String generateFirstName() {
+    private String generateFirstName() {
         Random random = new Random();
         return FirstNames.values()[random.nextInt(FirstNames.values().length)].toString();
     }
 
-    public String generateLastName() {
+    private String generateLastName() {
         Random random = new Random();
         return LastNames.values()[random.nextInt(LastNames.values().length)].toString();
     }
