@@ -41,22 +41,20 @@ public class Time {
     public void setHour(int hour) {
         this.hour = hour;
     }
-    int quantitySecond(){
+
+    public int quantitySecond() {
         return second + minute * 60 + hour * 3600;
     }
-    public static void compareTime(Time a, Time b){
-        if(a.quantitySecond() == b.quantitySecond()){
+
+    public static void compareTime(Time a, Time b) {
+        if (a.quantitySecond() == b.quantitySecond()) {
             System.out.println("Два времени ровны");
-        }
-        else if(a.quantitySecond() == b.second){
+        } else if (a.quantitySecond() == b.second) {
             System.out.println("Два времени ровны");
-        }
-        else if(a.second == b.quantitySecond()){
+        } else if (a.second == b.quantitySecond()) {
             System.out.println("Два времени ровны");
-        }
-        else if(a.second == b.second){
+        } else if (a.second == b.second) {
             System.out.println("Два времени ровны");
-        }
-        else System.out.println("Два времени не равны");
+        } else System.out.println("Два времени не равны");
     }
 }

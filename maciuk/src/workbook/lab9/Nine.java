@@ -5,18 +5,18 @@ package workbook.lab9;
  */
 public class Nine {
     public static void main(String[] args) {
-        int n = 0;
-        int d = 0;
-        int x = (int) (Math.random() * 20);
-        while (x != 0) {
-            if (x > d) {
-                d = x;
+        int quantityNumbers = 0;
+        int largestNumber = 0;
+        int randomNumber = (int) (Math.random() * 20);
+        while (randomNumber != 0) {
+            if (randomNumber > largestNumber) {
+                largestNumber = randomNumber;
             }
-            n++;
-            x = (int) (Math.random() * 20);
+            quantityNumbers++;
+            randomNumber = (int) (Math.random() * 20);
         }
-        if (n != 0) {
-            System.out.println("Наибольшее число = " + d);
+        if (quantityNumbers != 0) {
+            System.out.println("Наибольшее число = " + largestNumber);
         } else {
             System.out.println("случайное число = 0");
         }

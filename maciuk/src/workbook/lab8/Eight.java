@@ -11,10 +11,10 @@ public class Eight {
         int x = (int) (Math.random() * 20);
         while (x != 0) {
             int summer = 1;
-            int d = 1;
-            while (d <= x) {
-                summer *= d;
-                d++;
+            int numbersFrom1ToX = 1;
+            while (numbersFrom1ToX <= x) {
+                summer *= numbersFrom1ToX;
+                numbersFrom1ToX++;
             }
             sum += summer;
             n++;
