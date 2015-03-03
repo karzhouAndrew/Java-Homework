@@ -1,0 +1,5 @@
+package workbook.lab26;
+
+public enum Names {
+    JAKUB, MAREK, RADKO, LADISLAV, TOMAS, MICHAL, ROMAN, ONDREY, ZBYNEK, LUKAS, PATRIK, JAROMIR, ALES, PETR
+}
