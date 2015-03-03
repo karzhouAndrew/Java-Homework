@@ -1,4 +1,4 @@
-package workbook.task7;
+package workbook.listTask;
 
 public class Pupil {
     private Names name;

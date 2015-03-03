@@ -1,9 +1,10 @@
-package workbook.task7;
+// Sozdat' ArrayList ocenok uchenikov i zapolnit' randomno. Udalit' neudy iz spiska
+package workbook.listTask;
 
 import java.util.ArrayList;
 import java.util.List;
-// Sozdat' ArrayList ocenok uchenikov i zapolnit' randomno. Udalit' neudy iz spiska
-public class Main {
+
+public class Task7 {
     public static void main(String[] args) {
         List<Pupil> list = new ArrayList<Pupil>();
         int listSize = 10;
