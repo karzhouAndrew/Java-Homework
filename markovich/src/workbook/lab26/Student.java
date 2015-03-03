@@ -16,7 +16,7 @@ public class Student {
         return Names.values()[random.nextInt(Names.values().length)].toString();
     }
 
-    public static int randBetween(int min, int max) {
+    private int randBetween(int min, int max) {
         return min + (int) Math.round(Math.random() * (max - min));
     }
 
