@@ -33,22 +33,21 @@ public class Bankomat {
     public boolean Money(int sum){
 
 
-        //if (sum%20!=0)return false;//проверка на вшивость
-        int note100 = sum/100;//число требуемых купюр номиналом 100
-        if (note100>Note100Cnt) {//нету стоолько купюр - выдаем что есть
+        int note100 = sum/100;
+        if (note100>Note100Cnt) {
             note100 = Note100Cnt;
         }
         int note50 = 0;
         if ((sum - note100*100)%20==10||note100 == 0||(sum - note100*100)%50==0||(sum - note100*100)%50>=20) {
-            note50 = (sum - note100 * 100) / 50;//число требуемых купюр номиналом 50
-            if (note50 > Note50Cnt) {//нету стоолько купюр - выдаем что есть
+            note50 = (sum - note100 * 100) / 50;
+            if (note50 > Note50Cnt) {
                 note50 = Note50Cnt;
             }
         }
 
         if ((sum-note100*100-note50*50)%20!=0)return false;
-        int note20 = (sum-note100*100-note50*50)/20;//число требуемых купюр номиналом 20
-        if (note20>Note20Cnt){//нету стоолько купюр - ну не смагла я
+        int note20 = (sum-note100*100-note50*50)/20;
+        if (note20>Note20Cnt){
             return false;
         }
 
