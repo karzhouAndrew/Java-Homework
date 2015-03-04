@@ -1,16 +1,16 @@
 package classwork.class4;
 
 /**
- * Created by MTK on 23.02.2015.
+ * Created by Tonya on 24.02.2015.
  */
-public class SalesManager extends Employee {
+public class TeamLeader extends Employee {
     private int numberTeam;
 
-    public SalesManager(int numberTeam) {
+    public TeamLeader(int numberTeam) {
         this.numberTeam = numberTeam;
     }
 
-    public SalesManager() {
+    public TeamLeader() {
         numberTeam = 1;
     }
 
@@ -24,6 +24,6 @@ public class SalesManager extends Employee {
 
     @Override
     public String toString() {
-        return "SalesManager: " + super.toString() + " , numberTeam=" + numberTeam;
+        return "TeamLeader: " + super.toString() + " , numberTeam=" + numberTeam;
     }
 }

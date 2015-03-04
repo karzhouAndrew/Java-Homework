@@ -1,17 +1,19 @@
 package classwork.class4;
 
 /**
- * Created by MTK on 23.02.2015.
+ * Created by Tonya on 24.02.2015.
  */
-public class SalesManager extends Employee {
+public class Developer extends Employee {
     private int numberTeam;
+    private String technologys;
 
-    public SalesManager(int numberTeam) {
+    public Developer(int numberTeam) {
         this.numberTeam = numberTeam;
     }
 
-    public SalesManager() {
+    public Developer() {
         numberTeam = 1;
+        technologys =  TechnologyGenerator.generateTechnologys();
     }
 
     public int getNumberTeam() {
@@ -24,6 +26,6 @@ public class SalesManager extends Employee {
 
     @Override
     public String toString() {
-        return "SalesManager: " + super.toString() + " , numberTeam=" + numberTeam;
+        return "Developer: " + super.toString() + " , numberTeam=" + numberTeam;
     }
 }
