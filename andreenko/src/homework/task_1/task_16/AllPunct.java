@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Алексей Андреенко on 17.02.2015.
+ * Created by Алексей Андреенко on 17.02.2015..
  */
 public class AllPunct {
     int numofPunct = 0;

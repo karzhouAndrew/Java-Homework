@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by Алексей Андреенко on 17.02.2015.
+ * Created by Алексей Андреенко on 17.02.2015..
  */
 public class StringInput {
     private String sentence;

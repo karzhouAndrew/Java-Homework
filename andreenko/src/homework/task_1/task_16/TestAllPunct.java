@@ -3,7 +3,7 @@ package homework.task_1.task_16;
 import java.io.IOException;
 
 /**
- * Created by Алексей Андреенко on 17.02.2015.
+ * Created by Алексей Андреенко on 17.02.2015..
  * Найти в строке не только запятые, но и другие знаки препинания. Подсчитать их общее количество!
  */
 public class TestAllPunct {
