@@ -18,7 +18,7 @@ public class main {
         }
         int size = arrayList.size();
 
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size; i++) {
             if (arrayList.get(i) <= 3) {
                 arrayList.remove(i);
                 size = arrayList.size();
