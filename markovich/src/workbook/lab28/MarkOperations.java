@@ -10,8 +10,9 @@ public class MarkOperations {
         ListIterator<Student> listIterator = studentList.listIterator();
         int maxMark = 0;
         while (listIterator.hasNext()) {
-            if (listIterator.next().getMark() > maxMark) {
-                maxMark = listIterator.previous().getMark();
+            Student currentStudent = listIterator.next();
+            if (currentStudent.getMark() > maxMark) {
+                maxMark = currentStudent.getMark();
             }
         }
         return maxMark;
