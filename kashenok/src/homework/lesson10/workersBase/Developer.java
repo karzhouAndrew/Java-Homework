@@ -1,20 +1,30 @@
 package homework.lesson10.workersBase;
 
-import java.util.Date;
-
 /**
  * Created by Рома on 25.02.2015.
  */
 public class Developer extends Workers {
-    String usingTechnology;
+    private String UsingTechnology;
 
-    public Developer(String usingTechnology) {
-        this.usingTechnology = usingTechnology;
+    public Developer(String name, String surname, String usingTechnology) {
+        super(name, surname);
+        String usingTechnolog;
     }
 
-    public Developer(String name,String usingTechnology) {
-        super(name);
-        this.usingTechnology = usingTechnology;
+    public String getUsingTechnology() {
+        return UsingTechnology;
+    }
+
+    public void setUsingTechnology(String usingTechnology) {
+        UsingTechnology = usingTechnology;
+    }
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "UsingTechnology='" + UsingTechnology + '\'' +
+                ", randomName=" + getName() + ", randomSurName=" + getSurname() +
+                '}';
     }
 
 

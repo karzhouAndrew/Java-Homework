@@ -1,20 +1,18 @@
 package homework.lesson10.workersBase;
 
 
+import java.util.Random;
+
 public class Workers {
     private String name;
     private String surname;
     public Workers() {
 
     }
-    public Workers(String name) {
-        this.name = name;
-        this.surname = surname;
-    }
 
     public Workers(String name, String surname) {
     }
-
+Random rand = new Random();
     public String getName() {
         return name;
     }

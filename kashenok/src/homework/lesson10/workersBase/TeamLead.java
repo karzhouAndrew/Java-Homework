@@ -8,12 +8,9 @@ import java.util.Date;
 public class TeamLead extends Workers {
     int subordinates;
 
-    public TeamLead(int subordinates) {
+    public TeamLead(String name, String surname, int subordinates) {
+        super(name,surname);
         this.subordinates = subordinates;
     }
 
-    public TeamLead(String name, int subordinates) {
-        super(name);
-        this.subordinates = subordinates;
-    }
 }
