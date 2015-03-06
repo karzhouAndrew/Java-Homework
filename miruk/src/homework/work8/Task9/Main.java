@@ -13,7 +13,7 @@ public class Main {
         List<Integer> arrayList = new ArrayList<Integer>();
         int integer = 20;
         for (int i = 0; i < integer; i++) {
-            int value = (int) (Math.random() * 100);
+            int value = (int) (Math.random() * 10);
             arrayList.add(value);
         }
         int size = arrayList.size();
