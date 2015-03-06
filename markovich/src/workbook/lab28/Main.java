@@ -1,6 +1,5 @@
 package workbook.lab28;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,12 +8,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Student> studentList = new ArrayList<Student>();
-        int quantityStudents = 8;
-        for (int i = 0; i < quantityStudents; i++) {
-            studentList.add(new Student());
-        }
+
+        int quantityStudents = 7;
+        List<Student> studentList = ListOperations.fillingList(quantityStudents);
+
         System.out.println(studentList);
+
         System.out.println(MarkOperations.bestStudents(MarkOperations.maxMark(studentList), studentList));
     }
 }
