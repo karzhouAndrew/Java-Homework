@@ -1,6 +1,7 @@
 package workbook.lab26;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -10,19 +11,10 @@ import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        List<Student> students = new ArrayList<Student>();
         int quantityStudents = 7;
-        for (int i = 0; i < quantityStudents; i++) {
-            students.add(new Student());
-        }
+        List<Student> students = ListOperations.fillingList(quantityStudents);
         System.out.println(students);
 
-        ListIterator<Student> listIterator = students.listIterator();
-        while (listIterator.hasNext()) {
-            if (listIterator.next().getMark() < 4) {
-                listIterator.remove();
-            }
-        }
-        System.out.println(students);
+        System.out.println(ListOperations.deleteBadStudents(students));
     }
 }
