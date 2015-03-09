@@ -25,22 +25,22 @@ public class Main {
     }
 
     public static int countWords(String line) {
-        int result = 0;
+        int count = 0;
         String[] splitted = line.split("[\\p{Punct}| +|0-9]");
         for (String word : splitted) {
             if (word.length() > 0) {
-                result++;
+                count++;
             }
         }
-        return result;
+        return count;
     }
 
     private static int countPuncts(String line) {
-        int result = 0;
+        int count = 0;
         Matcher match = Pattern.compile("\\p{Punct}").matcher(line);
         while (match.find()) {
-            result++;
+            count++;
         }
-        return result;
+        return count;
     }
 }
