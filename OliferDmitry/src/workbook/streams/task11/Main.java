@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("text.txt"));
-        int words = 0, puncts = 0;
-
+        int words = 0;
+        int puncts = 0;
         String line = br.readLine();
         while (line != null) {
             words += countWords(line);
