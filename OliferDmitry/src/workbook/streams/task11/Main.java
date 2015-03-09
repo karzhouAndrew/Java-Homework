@@ -1,3 +1,4 @@
+// Создать файл с текстом, прочитать, подсчитать в тексте количество знаков препинания и слов.
 package workbook.streams.task11;
 
 import java.io.BufferedReader;
@@ -6,7 +7,6 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// Создать файл с текстом, прочитать, подсчитать в тексте количество знаков препинания и слов.
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("text.txt"));
