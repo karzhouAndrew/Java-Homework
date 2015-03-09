@@ -18,6 +18,7 @@ public class Main {
             puncts += countPuncts(line);
             line = br.readLine();
         }
+
         System.out.println("Total words: " + words);
         System.out.println("Total punctums: " + puncts);
         br.close();
