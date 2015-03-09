@@ -20,7 +20,7 @@ public class Main {
         }
 
         System.out.println("Total words: " + words);
-        System.out.println("Total punctums: " + puncts);
+        System.out.println("Total puncts: " + puncts);
         br.close();
     }
 
