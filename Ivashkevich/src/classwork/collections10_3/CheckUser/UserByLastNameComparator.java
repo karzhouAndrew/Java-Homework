@@ -15,8 +15,8 @@ public class UserByLastNameComparator implements Comparator<User> {
         String str2 = user2.getLastName();
         int result = str1.compareTo(str2);
         if (result == 0) {
-            str1 = user1.getLastName();
-            str2 = user2.getLastName();
+            str1 = user1.getFirstName();
+            str2 = user2.getFirstName();
             return str1.compareTo(str2);
         }
         return result;
