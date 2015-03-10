@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Numbers from file: " + map);
         System.out.println("Their sum is: " + mapSum(map));
         System.out.println("Numbers without repeat: " + map.keySet());
-
+        br.close();
     }
 
     private static Map<Integer, Integer> lineToMap(String line) {
