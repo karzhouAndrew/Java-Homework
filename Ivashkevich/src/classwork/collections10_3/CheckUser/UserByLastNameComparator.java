@@ -9,6 +9,7 @@ import java.util.Comparator;
  */
 public class UserByLastNameComparator implements Comparator<User> {
 
+
     @Override
     public int compare(User user1, User user2) {
         String str1 = user1.getLastName();
