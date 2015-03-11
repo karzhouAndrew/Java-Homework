@@ -35,7 +35,6 @@ public class Main {
         for (int i = 0; i < studQuantity; i++) {
                 fos2.write((studList.get(i)+"\r\n").getBytes());
         }
-
         fos2.close();
     }
 
