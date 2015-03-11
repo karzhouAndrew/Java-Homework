@@ -1,30 +1,41 @@
 package classwork.class6;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 /**
  * В файле, содержащем фамилии студентов и их оценки, записать прописными буквами фамилии тех студентов,
  * которые имеют средний балл более 7
- *  */
+ */
 public class Task5 {
     public static void main(String[] args) throws IOException {
-        FileReader in = new FileReader("surname_copy.txt");
-        FileWriter out = new FileWriter("Surname.txt");
-        int c;
-        while ((c = in.read()) != -1) {
-            out.write(c);
-        }
+        Scanner sc = new Scanner(new FileReader("surname_copy.txt"));
+        FileWriter pw = new FileWriter(new File("Surname.txt"));
+        String[] student;
+        String[] value;
 
-        if (in != null) {
-            in.close();
+        while (sc.hasNextLine()) {
+            student = sc.nextLine().split("\\s+");
+            double sum = 0;
+            int number = 0;
+            for (int i = 1; i < student.length; i++) {
+                sum += Integer.parseInt(student[i]);
+                number++;
+            }
+            double avg = sum / number;
+            if (avg >= 7) {
+                int i = 1;
+                pw.write(student[0].toUpperCase());
+                pw.write(" ");
+                while (i < student.length) {
+                    pw.write(student[i]);
+                    pw.write(" ");
+                    i++;
+                }
+                pw.write("   ");
+            }
         }
-        if (out != null) {
-            out.close();
-        }
+        sc.close();
+        pw.close();
     }
-
-
 }
