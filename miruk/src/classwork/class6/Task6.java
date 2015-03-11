@@ -18,12 +18,10 @@ public class Task6 {
         sc = new Scanner(new FileReader("file.txt"));
         FileWriter pw = new FileWriter(new File("file_copy.txt"));
         String[] word;
-        while (sc.hasNextLine()) {
-            word = sc.nextLine().split("\\s+");
+        while (sc.hasNext()) {
+            word = sc.next().split("\\s+");
             if (number == 2) {
-                for (int i = 1; i < word.length-1; i++) {
-                    pw.write(Integer.parseInt(word[i]));
-                }
+            //  if (word instanceof(Integer))
             }
         }
         sc.close();
