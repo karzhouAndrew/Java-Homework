@@ -6,11 +6,7 @@ package classwork.class5;
 public class IteratorArr<T> {
     ListArr <T> iter;
     IteratorArr(ListArr<T> arg) {
-        iter = arg;
-    }
+        iter = arg;}
 
-    boolean hasNext() {
-
-    }
 
 }
