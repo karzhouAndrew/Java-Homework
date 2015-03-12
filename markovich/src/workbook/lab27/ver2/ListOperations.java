@@ -25,10 +25,21 @@ public class ListOperations {
                     break;
                 }
             }
+            duplicateSearch(i, integerList, existNumber);
             if (!existNumber) {
                 finalList.add(integerList.get(i));
             }
         }
         return finalList;
+    }
+
+    private static boolean duplicateSearch(int i, List<Integer> integerList, boolean duplicate) {
+        for (int j = 0; j < integerList.size(); j++) {
+            if (i != j && integerList.get(i).equals(integerList.get(j))) {
+                duplicate = true;
+                break;
+            }
+        }
+        return duplicate;
     }
 }
