@@ -4,13 +4,8 @@ package workbook.blinov3;
  * Created by Natashka on 19.02.2015.
  */
 public class FindWord {
-    private String str;
 
-    public void setStr(String str) {
-        this.str = str;
-    }
-
-    public void word() {
+    public void word(String str) {
         String[] sentence = str.split("[.\\x3f!]");
         String firstSent = sentence[0];
         sentence[0]="";

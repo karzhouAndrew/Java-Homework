@@ -4,20 +4,14 @@ package workbook.blinov7;
  * Created by Natashka on 20.02.2015.
  */
 public class VowelsSorting {
-    private String str;
 
-    public void setStr(String str) {
-        this.str = str;
-    }
-
-    public void vowelsSorting() {
+    public void vowelsSorting(String str) {
         String str1 = str.replaceAll("[.\\x3f!]", "");
         String[] words = str1.split("\\s");
         int[] numOfVowels = new int[words.length];
         VowelsCounter vowelsCounter = new VowelsCounter();
         for (int i = 0; i < words.length; i++) {
-            vowelsCounter.setStr(words[i]);
-            numOfVowels[i] = vowelsCounter.counter();
+            numOfVowels[i] = vowelsCounter.counter(words[i]);
         }
         for (int i = numOfVowels.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {

@@ -5,9 +5,8 @@ package classes.blinov1;
  */
 public class SameWordTest {
     public static void main(String[] args) {
-        String str="павел вася маша павел.Nata nata nata nata света света павел вася!? иван иван павел света иван!";
-        SameWordFinder sameWordFinder=new SameWordFinder();
-        sameWordFinder.setStr(str);
-        sameWordFinder.sameWord();
+        String str = "павел вася маша павел.Nata nata nata nata света света павел вася!? иван иван павел света иван!";
+        SameWordFinder sameWordFinder = new SameWordFinder();
+        sameWordFinder.sameWord(str);
     }
 }

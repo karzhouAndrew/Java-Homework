@@ -11,8 +11,8 @@ public class MaxMarkFinder {
         int maxMark = markList.get(0);
         Iterator<Integer> iterator = markList.listIterator();
         while (iterator.hasNext()) {
-            int mark=iterator.next();
-            if (maxMark<mark) {
+            int mark = iterator.next();
+            if (maxMark < mark) {
                 maxMark = mark;
             }
         }

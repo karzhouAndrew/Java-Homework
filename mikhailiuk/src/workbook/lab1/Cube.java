@@ -12,24 +12,25 @@ public class Cube {
         color = "black";
     }
 
-    public Cube(double size1, String color1) {
-        size = size1;
-        color = color1;
+    public Cube(double size, String color) {
+        this.size = size;
+        this.color = color;
     }
 
-    public void setSize(double size1) {
-        size = size1;
-    }
-
-    public void setColor(String color1) {
-        color = color1;
-    }
 
     public double getSize() {
         return size;
     }
 
+    public void setSize(double size) {
+        this.size = size;
+    }
+
     public String getColor() {
         return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

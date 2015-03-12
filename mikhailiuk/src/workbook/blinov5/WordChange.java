@@ -4,13 +4,8 @@ package workbook.blinov5;
  * Created by Natashka on 20.02.2015.
  */
 public class WordChange {
-    private String str;
 
-    public void setStr(String str) {
-        this.str = str;
-    }
-
-    public String wordChange() {
+    public String wordChange(String str) {
         String[] sentence = str.split("[.\\x3f!]");
         StringBuilder builder = new StringBuilder();
         for (String tempSent : sentence) {
@@ -22,7 +17,6 @@ public class WordChange {
             for (String sent : oneSent) {
                 builder.append(sent).append(" ");
             }
-
         }
         return builder.toString();
     }

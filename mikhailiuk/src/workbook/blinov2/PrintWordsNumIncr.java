@@ -12,7 +12,6 @@ public class PrintWordsNumIncr {
                 " капитан дожил до шестидесяти двух лет и был бы обречен до скончания дней просиживать штаны в роли" +
                 " председателя совета маяка, не выручи его война.";
         WordsNumber wordsNumber = new WordsNumber();
-        wordsNumber.setStr(str);
-        wordsNumber.wordsNumber();
+        wordsNumber.wordsNumber(str);
     }
 }

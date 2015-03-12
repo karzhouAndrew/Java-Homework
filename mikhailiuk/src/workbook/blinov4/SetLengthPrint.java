@@ -1,26 +1,16 @@
 package workbook.blinov4;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Natashka on 20.02.2015.
  */
 public class SetLengthPrint {
-    private String str;
-    private int length;
 
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public void setStr(String str) {
-        this.str = str;
-    }
-
-    public void setLengthPrint() {
-        int counter = 0;
-        String[] printWord = new String[str.length()];
-        for (String temp : printWord) {
-            temp = "";
-        }
+    public void setLengthPrint(String str, int length) {
+        Set<String> printWord = new HashSet<String>();
+        str=str.toLowerCase();
         str = str.replaceAll(",", "");
         str = str.replaceAll("\\x3f", "??");
         String[] sentences = str.split("[.!\\x3f][\\s]");
@@ -29,23 +19,11 @@ public class SetLengthPrint {
                 String[] words = sent.split("\\s");
                 for (String word : words) {
                     if (word.length() == length) {
-                        printWord[counter] = word;
-                        counter++;
-                        System.out.println(word);
+                        printWord.add(word);
                     }
                 }
             }
         }
-        //        for (int i = 0; i < printWord.length; i++) {
-        //   for (int j = i + 1; j < printWord.length; j++) {
-        //     if (printWord[i].equalsIgnoreCase(printWord[j])) {
-        //       System.out.println(printWord[i]);
-        // }
-        // }
-        // } //for (String word:printWord){
-        //  if (word !=null){
-        //      System.out.println(word);
-        //  }
-        // }
+        System.out.println(printWord);
     }
 }

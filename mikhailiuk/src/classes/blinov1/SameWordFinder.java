@@ -4,13 +4,8 @@ package classes.blinov1;
  * Created by Natashka on 18.02.2015.
  */
 public class SameWordFinder {
-    private String str;
 
-    public void setStr(String str) {
-        this.str = str;
-    }
-
-    public void sameWord() {
+    public void sameWord(String str) {
         String[] sentence = str.split("[.\\x3f!]");
         int[] swInSent = new int[sentence.length];
         int maxVal = 0;
