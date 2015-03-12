@@ -18,14 +18,7 @@ public class ListOperations {
     public static List<Integer> deleteDuplicate(List<Integer> integerList) {
         List<Integer> finalList = new ArrayList<Integer>();
         for (int i = 0; i < integerList.size(); i++) {
-            boolean existNumber = false;
-            for (int j = 0; j < integerList.size(); j++) {
-                if (i != j && integerList.get(i).equals(integerList.get(j))) {
-                    existNumber = true;
-                    break;
-                }
-            }
-            duplicateSearch(i, integerList, existNumber);
+            boolean existNumber = duplicateSearch(i, integerList);
             if (!existNumber) {
                 finalList.add(integerList.get(i));
             }
@@ -33,7 +26,8 @@ public class ListOperations {
         return finalList;
     }
 
-    private static boolean duplicateSearch(int i, List<Integer> integerList, boolean duplicate) {
+    private static boolean duplicateSearch(int i, List<Integer> integerList) {
+        boolean duplicate = false;
         for (int j = 0; j < integerList.size(); j++) {
             if (i != j && integerList.get(i).equals(integerList.get(j))) {
                 duplicate = true;
