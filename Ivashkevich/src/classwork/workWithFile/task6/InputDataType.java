@@ -11,27 +11,27 @@ public class InputDataType {
 
     public static Integer input() {
         Scanner in = new Scanner(System.in);
-        int out = 0;
         String input = in.next();
         if (input.toUpperCase().equals("INT")) {
             System.out.println("Целые числа: ");
-            out = 1;
+            return  1;
         }
         if (input.toUpperCase().equals("DOUBLE")) {
             System.out.println("Числа с плавающей запятой: ");
-            out = 2;
+            return  2;
         }
         if (input.toUpperCase().equals("WORD")) {
             System.out.println("Слова: ");
-            out = 3;
+            return  3;
         }
         if (input.toUpperCase().equals("SYMBOL")) {
             System.out.println("Символы: ");
-            out = 4;
+           return  4;
         }
         if (input.toUpperCase().equals("EXIT")) {
-            out = 5;
+            return  5;
         }
-        return out;
+
+        return 6;
     }
 }

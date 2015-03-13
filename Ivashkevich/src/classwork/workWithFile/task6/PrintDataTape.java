@@ -8,6 +8,9 @@ public class PrintDataTape {
     public void print(String res) {
         for (; ; ) {
             int input = InputDataType.input();
+            if(input==6){
+                System.out.print("Неизвестный тип данных.");
+            }
             if (input == 5) {
                 break;
             }
