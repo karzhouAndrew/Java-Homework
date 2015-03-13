@@ -20,4 +20,4 @@ public class Cube {
         return 6 * (int) Math.pow(side, 2);
     }
 
-    }
+}

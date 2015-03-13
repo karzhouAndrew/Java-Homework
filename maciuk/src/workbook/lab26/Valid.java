@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Asus on 21.02.2015.
+ Определить валидность строки.
  */
 public class Valid {
     public static void main(String[] args) {
