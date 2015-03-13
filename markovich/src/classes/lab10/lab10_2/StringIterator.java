@@ -13,20 +13,12 @@ public class StringIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        if (stringIndex < stringArray.length) {
-            return true;
-        } else {
-            return false;
-        }
+        return (stringIndex < stringArray.length) ? true : false;
     }
 
     @Override
     public String next() {
-        if (stringIndex < stringArray.length) {
-            return stringArray[stringIndex++];
-        } else {
-            return null;
-        }
+        return (stringIndex < stringArray.length) ? stringArray[stringIndex++] : null;
     }
 
     @Override
