@@ -8,24 +8,24 @@ public class PrintDataTape {
     public void print(String res) {
         for (; ; ) {
             int input = InputDataType.input();
-            if(input==6){
+            if (input == 6) {
                 System.out.print("Неизвестный тип данных.");
             }
             if (input == 5) {
                 break;
             }
             String[] resSplit = res.split(" +");
-            for (int i = 0; i < resSplit.length; i++) {
-                String resTrim = resSplit[i].replaceAll(",$", "").replaceAll(",", ".");
+            for (String currentResSplit : resSplit) {
+                String resTrim = currentResSplit.replaceAll(",$", "").replaceAll(",", ".");
                 try {
-                    Integer ie = Integer.parseInt(resTrim);
-                    if (ie instanceof Integer && input == 1) {
+                    Integer isInt = Integer.parseInt(resTrim);
+                    if (input == 1) {
                         System.out.print(resTrim + " ");
                     }
                 } catch (NumberFormatException e) {
                     try {
-                        Double ie = Double.parseDouble(resTrim);
-                        if (ie instanceof Double && input == 2) {
+                        Double isDouble = Double.parseDouble(resTrim);
+                        if (input == 2) {
                             System.out.print(resTrim + " ");
                         }
                     } catch (NumberFormatException e2) {
