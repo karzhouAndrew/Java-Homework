@@ -12,5 +12,6 @@ public class Main {
         Locale loc = new Locale("uk", "UA");
         NumberFormat uahFormat = NumberFormat.getCurrencyInstance(loc);
         System.out.println(uahFormat.format(153.5));
+
     }
 }
