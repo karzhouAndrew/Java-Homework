@@ -3,10 +3,8 @@ package workbook.lab30;
 import java.io.*;
 
 public class FileOperations {
-    public static void writerFile() {
+    public static void writerFile(String str) {
         try {
-
-            String str = "В понедельник Apple проведет презентацию Apple Watch, первого полностью нового продукта с момента выпуска iPad в 2010 году.";
             File file = new File("markovich/src/workbook/lab30/filename.txt");
 
             if (!file.exists()) {
@@ -26,15 +24,11 @@ public class FileOperations {
     }
 
     public static void readerFile() {
-        BufferedReader br = null;
-
+        BufferedReader bufferedReader = null;
         try {
-
             String sCurrentLine;
-
-            br = new BufferedReader(new FileReader("markovich/src/workbook/lab30/filename.txt"));
-
-            while ((sCurrentLine = br.readLine()) != null) {
+            bufferedReader = new BufferedReader(new FileReader("markovich/src/workbook/lab30/filename.txt"));
+            while ((sCurrentLine = bufferedReader.readLine()) != null) {
                 System.out.println(sCurrentLine);
             }
 
@@ -42,12 +36,12 @@ public class FileOperations {
             e.printStackTrace();
         } finally {
             try {
-                if (br != null)br.close();
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
     }
-
-
 }
