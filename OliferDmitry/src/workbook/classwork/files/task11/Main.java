@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         String fileName = "text.txt";
-        System.out.println("Input word to find: ");
+        System.out.println("Input word which u need to find: ");
         String word = new Scanner(System.in).nextLine();
         File oldFile = new File(fileName);
         File newFile = new File("new_" + fileName);
