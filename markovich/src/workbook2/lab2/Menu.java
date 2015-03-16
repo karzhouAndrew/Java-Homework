@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static String PATH_FILE = "workbook2.lab2.MessagesBundle";
+    private static String PATH_FILE = "workbook2.lab2.MessagesBundle";
 
     public static void menu() {
         System.out.println("-------------------------------------------");
