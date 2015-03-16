@@ -1,58 +1,42 @@
 package workbook2.lab2;
 
 import java.util.Locale;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Menu {
 
+    public static String PATH_FILE = "workbook2.lab2.MessagesBundle";
+
     public static void menu() {
+        System.out.println("-------------------------------------------");
         System.out.println("1. Поприветствовать на английском языке. ");
         System.out.println("2. Поприветствовать на русском языке. ");
         System.out.println("3. Поприветствовать на белорусском языке. ");
         System.out.println("4. Поприветствовать на языке по умолчанию. ");
         System.out.println("5. Выход. ");
+        System.out.println("-------------------------------------------");
     }
 
     public void getMenu() {
-        menu();
+        String inputNumber;
         Scanner in = new Scanner(System.in);
-        for (; ; ) {
+        menu();
+        do {
             System.out.println("Выберите пункт меню: ");
-            String inputNumber = in.next();
-            Locale locale = Locale.getDefault().ENGLISH;
+            inputNumber = in.next();
+            Locale locale = Locale.getDefault();
             if (inputNumber.equals("1")) {
-                ResourceBundle resourceBundle = ResourceBundle.getBundle("workbook2.lab2.MessagesBundle", new Locale("en", "US"));
-                String greeting = resourceBundle.getString("greeting");
-                System.out.println(greeting);
-                continue;
+                PrintUnit.printMessage(PATH_FILE, new Locale("en", "US"));
             }
             if (inputNumber.equals("2")) {
-                ResourceBundle resourceBundle = ResourceBundle.getBundle("workbook2.lab2.MessagesBundle", new Locale("ru", "RU"));
-                String greeting = resourceBundle.getString("greeting");
-                System.out.println(greeting);
-                continue;
+                PrintUnit.printMessage(PATH_FILE, new Locale("ru", "RU"));
             }
             if (inputNumber.equals("3")) {
-                ResourceBundle resourceBundle = ResourceBundle.getBundle("workbook2.lab2.MessagesBundle", new Locale("be", "BY"));
-                String greeting = resourceBundle.getString("greeting");
-                System.out.println(greeting);
-                continue;
+                PrintUnit.printMessage(PATH_FILE, new Locale("be", "BY"));
             }
             if (inputNumber.equals("4")) {
-                ResourceBundle resourceBundle = ResourceBundle.getBundle("workbook2.lab2.MessagesBundle", locale);
-                String greeting = resourceBundle.getString("greeting");
-                System.out.println(greeting);
-                continue;
+                PrintUnit.printMessage(PATH_FILE, locale);
             }
-            if (inputNumber.equals("5")) {
-                break;
-            } else {
-                System.out.println("--------------------------");
-                System.out.println("Введите корректные данные.");
-                System.out.println("--------------------------");
-                continue;
-            }
-        }
+        } while (!inputNumber.equals("5"));
     }
 }
