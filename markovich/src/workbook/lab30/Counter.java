@@ -6,9 +6,10 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Counter {
-    public static void CountWordsAndPuncts() {
+
+    public static void countWordsAndPuncts() {
         try {
-            Scanner scanner = new Scanner(new File("markovich/src/workbook/lab30/filename.txt")).useDelimiter("\\Z");
+            Scanner scanner = new Scanner(new File(FileOperations.PATH)).useDelimiter("\\Z");
             String text = scanner.next();
             scanner.close();
 

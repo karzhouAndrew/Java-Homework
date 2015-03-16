@@ -10,6 +10,6 @@ public class Main {
         String str = "В понедельник Apple проведет презентацию Apple Watch, первого полностью нового продукта с момента выпуска iPad в 2010 году.";
         FileOperations.writerFile(str);
         FileOperations.readerFile();
-        Counter.CountWordsAndPuncts();
+        Counter.countWordsAndPuncts();
     }
 }
