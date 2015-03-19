@@ -55,9 +55,6 @@ public class TestDOM {
                     System.out.print(attributes.item(0));
                 }
             }
-
-            System.out.println("The solution of the problem:");
-
         } catch (SAXException e) {
             System.out.println("SAXException:");
             e.printStackTrace();
