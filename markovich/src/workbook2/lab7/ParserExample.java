@@ -38,15 +38,18 @@ public class ParserExample {
                 System.out.println(node.getNodeName());
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-
-                    System.out.println(element.getElementsByTagName("x").item(0).getTextContent() +
-                            element.getAttribute("unit") + ", " +
-                            element.getElementsByTagName("y").item(0).getTextContent() +
-                            element.getAttribute("unit"));
+                    readPoint(element);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void readPoint(Element point) {
+        System.out.println(point.getElementsByTagName("x").item(0).getTextContent() +
+                point.getAttribute("unit") + ", " +
+                point.getElementsByTagName("y").item(0).getTextContent() +
+                point.getAttribute("unit"));
     }
 }
