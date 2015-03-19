@@ -13,8 +13,7 @@ public class FileOperations {
                 file.createNewFile();
             }
 
-            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
             bufferedWriter.write(str);
             bufferedWriter.close();
 
