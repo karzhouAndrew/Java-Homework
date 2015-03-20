@@ -106,6 +106,7 @@ public class DOMParser {
     }
 
     public static List<Plant> grow(List<Plant> plantList, int monthQuantity) {
+
         for (int i = 0; i < plantList.size(); i++) {
             double heightIncrement = 0;
             Plant plant = plantList.get(i);
