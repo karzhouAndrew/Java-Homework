@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://tempuri.org/computer.xsd"
+            targetNamespace="http://tempuri.org/computer.xsd" >
+
+    <tns:Computer>
+        <tns:Id>1</tns:Id>
+        <tns:Device>
+            <tns:Name>"ds"</tns:Name>
+            <tns:Origin>"ds"</tns:Origin>
+            <tns:Price>3</tns:Price>
+            <tns:Critical>true</tns:Critical>
+            <tns:Availability>
+                <tns:Peripherals>true</tns:Peripherals>
+                <tns:cooler>true</tns:cooler>
+                <tns:Hardware>
+                    <tns:IO_device>true</tns:IO_device>
+                    <tns:multimedia>true</tns:multimedia>
+                    <tns:port>"nhj"</tns:port>
+                </tns:Hardware>
+            </tns:Availability>
+        </tns:Device>
+    </tns:Computer>
+
+</xsd:schema>
