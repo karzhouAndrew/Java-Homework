@@ -1,8 +1,18 @@
-<?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:tns="http://tempuri.org/PurchaseOrderSchema.xsd"
             targetNamespace="http://tempuri.org/PurchaseOrderSchema.xsd"
             elementFormDefault="qualified">
+
+
+    <xsd:element name="Computer" type="ComputerType"/>
+    <xsd:complexType name='ComputerType'>
+        <xsd:sequence>
+           <xsd:element name="Id" type='xsd:integer'/>
+           <xsd:element name="Device" type="tns:DeviceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
     <xsd:element name="Device" type="tns:DeviceType"/>
     <xsd:complexType name='DeviceType'>
         <xsd:sequence>
@@ -15,28 +25,27 @@
     </xsd:complexType>
 
     <xsd:complexType name='AvailabilityType'>
-        <xsd:all>
             <xsd:sequence>
                 <xsd:element name='Peripherals' type='xsd:boolean'/>
                 <xsd:element name="energy " type="xsd:integer" minOccurs="0" maxOccurs="3000"/>
                 <xsd:element name="cooler" type="xsd:boolean"/>
-
-                <xsd:complexType name='HardwareType'>
-                    <xsd:sequence>
-                        <xsd:element name='IO_device' type='xsd:boolean'/>
-                        <xsd:element name='multimedia' type='xsd:boolean'/>
-
-                        <xsd:element name="port">
-                            <xsd:simpleType>
-                                <xsd:restriction base="xsd:string">
-                                    <xsd:length value="3"/>
-                                </xsd:restriction>
-                            </xsd:simpleType>
-                        </xsd:element>
-                    </xsd:sequence>
-                </xsd:complexType>
+                <xsd:element name="Hardware" type="tns:HardwareType"/>
             </xsd:sequence>
-        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name='HardwareType'>
+        <xsd:sequence>
+            <xsd:element name='IO_device' type='xsd:boolean'/>
+            <xsd:element name='multimedia' type='xsd:boolean'/>
+
+            <xsd:element name="port">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:length value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
     </xsd:complexType>
 
 
@@ -65,5 +74,6 @@
             <xsd:maxInclusive value="100"/>
         </xsd:restriction>
     </xsd:simpleType>
+
 
 </xsd:schema>
