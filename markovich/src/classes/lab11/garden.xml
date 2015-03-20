@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<garden>
+    <trees>
+        <tree>
+            <name>Arborvitae</name>
+            <age>15</age>
+            <height>15.4</height>
+            <diametr>23.6</diametr>
+        </tree>
+        <tree>
+            <name>Butternut</name>
+            <age>23</age>
+            <height>17.2</height>
+            <diametr>54.3</diametr>
+        </tree>
+        <tree>
+            <name>Hawthorns</name>
+            <age>31</age>
+            <height>22.3</height>
+            <diametr>40.1</diametr>
+        </tree>
+        <tree>
+            <name>Baobab</name>
+            <age>98</age>
+            <height>27.9</height>
+            <diametr>93.2</diametr>
+        </tree>
+    </trees>
+    <shrubs>
+        <shrub>
+            <name>Abelia</name>
+            <age>5</age>
+        </shrub>
+        <shrub>
+            <name>Buddleja</name>
+            <age>6</age>
+        </shrub>
+        <shrub>
+            <name>Clianthus</name>
+            <age>3</age>
+        </shrub>
+        <shrub>
+            <name>Zanthoxylum</name>
+            <age>8</age>
+        </shrub>
+        <shrub>
+            <name>Zenobia pulverulenta</name>
+            <age>2</age>
+        </shrub>
+    </shrubs>
+</garden>
