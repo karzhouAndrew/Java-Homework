@@ -52,21 +52,30 @@ My "garden.xml" is:
 package workbook2.workbook2Tasks.parser.blinovTask;
 
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.util.List;
-import static workbook2.workbook2Tasks.parser.blinovTask.DOMParser.*;
+import static workbook2.workbook2Tasks.parser.blinovTask.Manipulations.*;
 
 public class Main {
 
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
+    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XMLStreamException {
         int monthInterval = 24;
         String fileName = "garden.xml";
-        String newFileName = "new_garden.xml";
+        String newFileName = "garden(new).xml";
 
-        List<Plant> plantList = parseXML(fileName);
+        List<Plant> plantList = MyDOMParser.parseXML(fileName);
+        System.out.println("        -= Parsed by DOM =-");
         System.out.println("Garden:\n" + plantList + "\n");
+
+        System.out.println("        -= Parsed by SAX =-");
+        MySAXParser.parseXML(fileName);
+
+        plantList = MyStAXParser.parseXML(fileName);
+        System.out.println("\n        -= Parsed by StAX =-");
+        System.out.println("Garden:\n" + plantList + "\n");
+
         System.out.println("Total plants in your garden: " + plantCount(plantList));
         System.out.println("Total height of your plants: " + plantHeightSum(plantList) + " meters");
 
