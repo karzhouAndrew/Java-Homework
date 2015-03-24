@@ -61,7 +61,7 @@ import static workbook2.workbook2Tasks.parser.blinovTask.Manipulations.*;
 public class Main {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XMLStreamException {
-        int monthInterval = 24;
+        int monthInterval = 36;
         String fileName = "garden.xml";
         String newFileName = "garden(new).xml";
 
