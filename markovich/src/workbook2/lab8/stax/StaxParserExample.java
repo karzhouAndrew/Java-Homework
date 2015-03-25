@@ -1,4 +1,4 @@
-package workbook2.lab8;
+package workbook2.lab8.stax;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class StaxParserExample {
 
-    private static String PATH = "markovich/src/workbook2/lab8/";
+    private static String PATH = "markovich/src/workbook2/lab8/stax/";
 
     public static void main(String[] args) {
         List<Point> pointList = StaxParser.staxParseXML(PATH + "pointsList.xml");

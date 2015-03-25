@@ -1,4 +1,4 @@
-package workbook2.lab8;
+package workbook2.lab8.stax;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
