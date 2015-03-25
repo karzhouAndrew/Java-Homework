@@ -1,0 +1,16 @@
+<?xml version = "1.0" ?>
+<xs:include schemaLocation="pt.xsd"/>
+<pointsList>
+    <point unit="cm">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit="mm">
+        <x>9</x>
+        <y>3</y>
+    </point>
+    <point unit="px">
+        <x>320</x>
+        <y>240</y>
+    </point>
+</pointsList>
