@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Computer.xsd">
+    <computerParts>
+
+        <title>Motherboard</title>
+
+        <pathInfo>
+            <manufacturer>GigaByte</manufacturer>
+            <Origin>SR</Origin>
+            <Price>120</Price>
+            <Type>
+                <PathGroup>I/O</PathGroup>
+                <peripheral>notPeripheral</peripheral>
+                <energyConsumption>120 Watt</energyConsumption>
+                <cooler>yes</cooler>
+                <port>USB</port>
+            </Type>
+
+            <Critical>yes</Critical>
+
+        </pathInfo>
+
+        <pathInfo>
+            <manufacturer>Asus</manufacturer>
+            <Origin>ES</Origin>
+            <Price>154</Price>
+            <Type>
+                <PathGroup>I/O</PathGroup>
+                <peripheral>notPeripheral</peripheral>
+                <energyConsumption>584 Watt</energyConsumption>
+                <cooler>no</cooler>
+                <port>COM</port>
+            </Type>
+            <Critical>yes</Critical>
+        </pathInfo>
+    </computerParts>
+</Device>
