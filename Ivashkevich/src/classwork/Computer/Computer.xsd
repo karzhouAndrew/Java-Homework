@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Device" type="Device"/>
+
+
+    <xs:complexType name="Device">
+        <xs:sequence>
+            <xs:element name="computerParts" type="computerParts" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="computerSoft" type="computerSoft" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="computerParts">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="pathInfo" type="pathInfo" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="computerSoft">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="softInfo" type="softInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pathInfo">
+        <xs:sequence>
+            <xs:element name="manufacturer" type="xs:string"/>
+            <xs:element name="Origin" type="xs:string"/>
+            <xs:element name="Price" type="xs:positiveInteger"/>
+            <xs:element name="Type" type="Type"/>
+            <xs:element name="Critical" type="Critical"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="softInfo">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Price">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="[0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Type">
+        <xs:sequence>
+            <xs:element name="PathGroup" type="PathGroup"/>
+            <xs:element name="peripheral" type="peripheral"/>
+            <xs:element name="energyConsumption" type="power"/>
+            <xs:element name="cooler" type="cooler"/>
+            <xs:element name="port" type="port"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="PathGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="I/O"/>
+            <xs:enumeration value="Multimedia"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="peripheral">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="peripheral"/>
+            <xs:enumeration value="notPeripheral"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="cooler">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="yes|no"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="port">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="COM"/>
+            <xs:enumeration value="USB"/>
+            <xs:enumeration value="LPT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="power">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]* Watt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Critical">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="yes|no"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
