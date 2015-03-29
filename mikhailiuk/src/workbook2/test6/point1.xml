@@ -1,6 +1,6 @@
 <?xml version= "1.0" encoding="UTF-8" standalone="no"?>
-<pointsList xmlns="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:SchemaLocation="point1.xsd">
+<pointsList xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.w3schools.com point1.xsd">
     <point unit="cm">
         <x>2</x>
         <y>3</y>

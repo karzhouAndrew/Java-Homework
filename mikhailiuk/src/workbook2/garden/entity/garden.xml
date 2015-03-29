@@ -1,0 +1,34 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<garden xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3schools.com garden.xsd">
+    <tree leaftype="deciduous" fruittype="none">
+        <name>oak</name>
+        <age>113</age>
+        <height>18.3</height>
+    </tree>
+    <tree leaftype="deciduous" fruittype="none">
+        <name>birch</name>
+        <age>25</age>
+        <height>22.5</height>
+    </tree>
+    <tree leaftype="deciduous" fruittype="apples">
+        <name>apple</name>
+        <age>5</age>
+        <height>4.5</height>
+    </tree>
+    <tree leaftype="coniferous" fruittype="none">
+        <name>cedar</name>
+        <age>69</age>
+        <height>32.8</height>
+    </tree>
+    <bush hedgetype="no" blossomtype="yes">
+        <name>lilac</name>
+        <age>4</age>
+        <height>2.5</height>
+    </bush>
+    <bush hedgetype="yes" blossomtype="no">
+        <name>laurels</name>
+        <age>3</age>
+        <height>1.7</height>
+    </bush>
+</garden>
