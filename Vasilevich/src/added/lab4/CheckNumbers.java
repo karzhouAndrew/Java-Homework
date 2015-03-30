@@ -58,6 +58,7 @@ public class CheckNumbers {
 
                 if (!resLuckEqual && !resLuckGrow) {
                     break;
+
                 }
             }
             if (resLuckEqual) {
