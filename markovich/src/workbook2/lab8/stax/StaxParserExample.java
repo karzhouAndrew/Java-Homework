@@ -14,7 +14,7 @@ public class StaxParserExample {
     public static void main(String[] args) {
         List<Point> pointList = StaxParser.staxParseXML(PATH + "pointsList.xml");
         for (Point point : pointList) {
-            System.out.println(point.toString());
+            System.out.println(point);
         }
     }
 }

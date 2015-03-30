@@ -9,15 +9,15 @@ import java.util.List;
 
 public class SAXHandler extends DefaultHandler {
 
-    private List<Point> pointList = null;
-    private Point point = null;
+    private List<Point> pointList;
+    private Point point;
 
     public List<Point> getPointList() {
         return pointList;
     }
 
-    boolean bCoordinateX = false;
-    boolean bCoordinateY = false;
+    private boolean bCoordinateX;
+    private boolean bCoordinateY;
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
