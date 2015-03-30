@@ -1,0 +1,64 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.w3schools.com"
+           xmlns="http://www.w3schools.com"
+           elementFormDefault="qualified">
+
+    <xs:element name="devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="device" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="origin" type="xs:string"/>
+                            <xs:element name="price" type="xs:positiveInteger"/>
+                            <xs:element name="type">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="peripheral">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="yes"/>
+                                                    <xs:enumeration value="no"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="wattpower" type="xs:positiveInteger"/>
+                                        <xs:element name="cooler">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="yes"/>
+                                                    <xs:enumeration value="no"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="role" type="xs:string"/>
+                                        <xs:element name="ports">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="usb"/>
+                                                    <xs:enumeration value="com"/>
+                                                    <xs:enumeration value="lpt"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="critical">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="yes"/>
+                                        <xs:enumeration value="no"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
