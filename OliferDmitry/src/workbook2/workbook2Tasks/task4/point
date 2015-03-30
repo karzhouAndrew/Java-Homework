@@ -1,0 +1,11 @@
+<?xml version = "1.0" ?>
+<pointlist>
+    <point unit = "cm">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit = "px">
+        <x>8</x>
+        <y>9</y>
+    </point>
+</pointlist>
