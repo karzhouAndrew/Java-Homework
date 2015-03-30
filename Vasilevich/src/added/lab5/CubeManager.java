@@ -7,8 +7,8 @@ public class CubeManager {
 
     public boolean calcCubeParams(CubeLib cube) {
         if (cube != null) {
-            cube.square = calcSquare(cube.sideLen);
-            cube.volume = calcVolume(cube.sideLen);
+            cube.setSquare(calcSquare(cube.getSideLen()));
+            cube.setVolume(calcVolume(cube.getSideLen()));
             return true;
         } else {
             return false;

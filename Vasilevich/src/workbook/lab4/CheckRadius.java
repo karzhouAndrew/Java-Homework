@@ -12,7 +12,6 @@ public class CheckRadius {
         if ((Math.pow((a / 2), 2) + Math.pow((b / 2), 2)) <= Math.pow(r, 2)) {
             System.out.println("Круг покрывает");
         } else {
-
             System.out.println("Круг не покрывает");
         }
     }

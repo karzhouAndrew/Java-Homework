@@ -8,19 +8,19 @@ import java.util.Random;
  */
 public class FindMaxVal {
     public static void main(String[] args) {
-
+        int randomValCount = 10;
         Random rand = new Random();
-        int arr[] = new int[10];
-        int maxVal = -2147483648;
-        int count = 10;
+        int arr[] = new int[randomValCount];
+        int maxVal = Integer.MAX_VALUE;
+
         System.out.print("Array = [");
-        for (int ind = 0; ind < count; ind++) {
+        for (int ind = 0; ind < randomValCount; ind++) {
             arr[ind] = rand.nextInt(100);
             if (maxVal < arr[ind]) {
                 maxVal = arr[ind];
             }
             System.out.print(arr[ind]);
-            if (ind < (count - 1)) {
+            if (ind < (randomValCount - 1)) {
                 System.out.print(", ");
             } else {
                 System.out.print("]");

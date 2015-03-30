@@ -11,8 +11,8 @@ public class Employee {
     private Date birthDate;
     private Date recruitDate;
     private JobType jobType;
-    static private int employeeCounter = 0;
-    final private int employeeID;
+    private static int employeeCounter = 0;
+    private final int employeeID;
 
 
     public Employee(String firstName, String lastName, Date birthDate, Date recruitDate, JobType jobType) {

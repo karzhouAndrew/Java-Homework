@@ -4,10 +4,10 @@ package added.lab5;
  * Created by Sam on 21.02.2015.
  */
 public class CubeLib {
-    double sideLen;
-    String color;
-    double square;
-    double volume;
+    private double sideLen;
+    private String color;
+    private double square;
+    private double volume;
 
     public double getSquare() {
         return square;

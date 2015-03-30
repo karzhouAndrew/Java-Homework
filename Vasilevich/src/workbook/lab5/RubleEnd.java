@@ -8,9 +8,8 @@ package workbook.lab5;
 public class RubleEnd {
     public static void main(String[] args) {
         int sum = 323;
-        int end = sum % 10;
         String strVal = " рубль";
-        switch (end) {
+        switch (sum % 10) {
             case 0:
             case 5:
             case 6:

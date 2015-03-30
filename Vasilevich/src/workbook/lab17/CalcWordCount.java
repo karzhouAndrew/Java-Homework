@@ -18,21 +18,17 @@ public class CalcWordCount {
     private static int calcCountWord(String strVal) {
         boolean lastCharWasEnd = false;
         int wordCount = 0;
-        for (int ind = 0; ind < strVal.length(); ind++) {
-            if (checkSymbol(strVal.charAt(ind))) {
+        for (int i = 0; i < strVal.length(); i++) {
+            if (checkSymbol(strVal.charAt(i))) {
                 if (!lastCharWasEnd){
                     wordCount++;
                     lastCharWasEnd = true;
                 }
-
             }else{
                 lastCharWasEnd = false;
             }
-
         }
-
         if ((strVal.length() > 0) && (!lastCharWasEnd)) {
-
             wordCount++;
         }
         return wordCount;
@@ -41,8 +37,8 @@ public class CalcWordCount {
     private static char endWordSymbols[] = {' ', ',', '.', '!', '?', '-', '(', ')'};
 
     private static boolean checkSymbol(char checkSymbol) {
-        for (int ind = 0; ind < endWordSymbols.length; ind++) {
-            if (checkSymbol == endWordSymbols[ind]) {
+        for (int i = 0; i < endWordSymbols.length; i++) {
+            if (checkSymbol == endWordSymbols[i]) {
                 return true;
             }
         }

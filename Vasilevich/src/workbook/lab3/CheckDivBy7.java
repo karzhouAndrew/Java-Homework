@@ -6,18 +6,17 @@ package workbook.lab3;
  */
 public class CheckDivBy7 {
     public static void main(String[] args) {
-        int val1 = 2147;
-        int val2 = 1293;
-        if ((val1 - 7) % 10 == 0) {
-            System.out.println("Число " + val1 + " имеет на конце 7");
+        int testVal1 = 2147;
+        int testVal2 = 1293;
+        if ((testVal1 - 7) % 10 == 0) {
+            System.out.println("Число " + testVal1 + " имеет на конце 7");
         } else {
-            System.out.println("Число " + val1 + " не имеет на конце 7");
+            System.out.println("Число " + testVal1 + " не имеет на конце 7");
         }
-
-        if ((val2 - 7) % 10 == 0) {
-            System.out.println("Число " + val2 + " имеет на конце 7");
+        if ((testVal2 - 7) % 10 == 0) {
+            System.out.println("Число " + testVal2 + " имеет на конце 7");
         } else {
-            System.out.println("Число " + val2 + " не имеет на конце 7");
+            System.out.println("Число " + testVal2 + " не имеет на конце 7");
         }
     }
 

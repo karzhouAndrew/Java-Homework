@@ -22,11 +22,9 @@ public class GetWordEnds {
                     strResult += strVal.charAt(ind - 1);
                     lastCharWasEnd = true;
                 }
-
             } else {
                 lastCharWasEnd = false;
             }
-
         }
 
         if ((strVal.length() > 0) && (!lastCharWasEnd)) {
@@ -35,9 +33,8 @@ public class GetWordEnds {
         return strResult;
     }
 
-    private static char endWordSymbols[] = {' ', ',', '.', '!', '?', '-', '(', ')'};
-
     private static boolean checkSymbol(char checkSymbol) {
+        char endWordSymbols[] = {' ', ',', '.', '!', '?', '-', '(', ')'};
         for (int ind = 0; ind < endWordSymbols.length; ind++) {
             if (checkSymbol == endWordSymbols[ind]) {
                 return true;

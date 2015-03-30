@@ -6,18 +6,16 @@ package workbook.lab7;
  */
 public class CompareNums {
     public static void main(String[] args) {
-        int val = 9394;
-        int val1 = val % 10;
-        int val2 = (val - val1) % 100;
-        int val3 = (val - val1 - val2) % 1000;
-        int val4 = (val - val1 - val2 - val3);
-
-        val2 /= 10;
-        val3 /= 100;
-        val4 /= 1000;
-
-        System.out.println(val + " = " + val4 + ' ' + val3 + ' ' + val2 + ' ' + val1);
-        if ((val1 != val2) && (val1 != val3) && (val1 != val4) && (val2 != val3) && (val2 != val4) && (val3 != val4)) {
+        int testVal = 9394;
+        int firstDigit = testVal % 10;
+        int secondDigit = (testVal - firstDigit) % 100;
+        int thirdDigit = (testVal - firstDigit - secondDigit) % 1000;
+        int fourthDigit = (testVal - firstDigit - secondDigit - thirdDigit);
+        secondDigit /= 10;
+        thirdDigit /= 100;
+        fourthDigit /= 1000;
+        System.out.println(testVal + " = " + fourthDigit + ' ' + thirdDigit + ' ' + secondDigit + ' ' + firstDigit);
+        if ((secondDigit != secondDigit) && (firstDigit != thirdDigit) && (secondDigit != fourthDigit) && (secondDigit != thirdDigit) && (secondDigit != fourthDigit) && (thirdDigit != fourthDigit)) {
             System.out.println("Все цифры разные");
         } else {
             System.out.println("Есть одинаковые цифры");
