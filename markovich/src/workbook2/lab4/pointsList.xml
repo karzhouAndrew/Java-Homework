@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<points xmlns="http://www.w3schools.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3schools.com pointList.xsd">
+    <point unit="px">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit="mm">
+        <x>9</x>
+        <y>3</y>
+    </point>
+    <point unit="cm">
+        <x>5</x>
+        <y>7</y>
+    </point>
+    <point unit="px">
+        <x>1</x>
+        <y>9</y>
+    </point>
+    <point unit="cm">
+        <x>14</x>
+        <y>7</y>
+    </point>
+</points>
