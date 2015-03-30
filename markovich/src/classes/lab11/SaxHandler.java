@@ -3,15 +3,16 @@ package classes.lab11;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import static classes.lab11.GardenTags.*;
 
 import java.util.*;
 
 
 public class SaxHandler extends DefaultHandler {
 
-    String treeName, shrubName, shrubFlowers;
-    double treeAge, treeHeight, treeTrunk, shrubAge, shrubHeight;
-    boolean shrubBerries;
+    private String treeName, shrubName, shrubFlowers;
+    private double treeAge, treeHeight, treeTrunk, shrubAge, shrubHeight;
+    private boolean shrubBerries;
 
     public List<Tree> treeList = new ArrayList<Tree>();
     public List<Shrub> shrubList = new ArrayList<Shrub>();
@@ -24,10 +25,10 @@ public class SaxHandler extends DefaultHandler {
 
         this.elementStack.push(qName);
 
-        if ("tree".equals(qName)) {
+        if (TREE.toString().equalsIgnoreCase(qName)) {
             Tree tree = new Tree("", 0, 0);
             this.objectStack.push(tree);
-        } else if ("shrub".equals(qName)) {
+        } else if (SHRUB.toString().equalsIgnoreCase(qName)) {
             Shrub shrub = new Shrub("", 0, 0);
             this.objectStack.push(shrub);
         }
@@ -37,9 +38,9 @@ public class SaxHandler extends DefaultHandler {
 
         this.elementStack.pop();
 
-        if ("tree".equals(qName)) {
+        if (TREE.toString().equalsIgnoreCase(qName)) {
             treeList.add(new Tree(treeName, treeAge, treeHeight, treeTrunk));
-        } else if ("shrub".equals(qName)) {
+        } else if (SHRUB.toString().equalsIgnoreCase(qName)) {
             shrubList.add(new Shrub(shrubName, shrubAge, shrubHeight, shrubBerries, shrubFlowers));
         }
     }
@@ -48,23 +49,23 @@ public class SaxHandler extends DefaultHandler {
 
         String value = new String(ch, start, length).trim();
 
-        if ("name".equals(currentElement()) && "tree".equals(currentElementParent())) {
+        if (NAME.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
             treeName = value;
-        } else if ("age".equals(currentElement()) && "tree".equals(currentElementParent())) {
+        } else if (AGE.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
             treeAge = Double.parseDouble(value);
-        } else if ("height".equals(currentElement()) && "tree".equals(currentElementParent())) {
+        } else if (HEIGHT.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
             treeHeight = Double.parseDouble(value);
-        } else if ("trunk".equals(currentElement()) && "tree".equals(currentElementParent())) {
+        } else if (TRUNK.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
             treeTrunk = Double.parseDouble(value);
-        } else if ("name".equals(currentElement()) && "shrub".equals(currentElementParent())) {
+        } else if (NAME.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
             shrubName = value;
-        } else if ("age".equals(currentElement()) && "shrub".equals(currentElementParent())) {
+        } else if (AGE.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
             shrubAge = Double.parseDouble(value);
-        } else if ("height".equals(currentElement()) && "shrub".equals(currentElementParent())) {
+        } else if (HEIGHT.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
             shrubHeight = Double.parseDouble(value);
-        } else if ("berries".equals(currentElement()) && "shrub".equals(currentElementParent())) {
+        } else if (BERRIES.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
             shrubBerries = Boolean.parseBoolean(value);
-        } else if ("flowers".equals(currentElement()) && "shrub".equals(currentElementParent())) {
+        } else if (FLOWERS.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
             shrubFlowers = value;
         }
     }

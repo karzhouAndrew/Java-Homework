@@ -33,9 +33,9 @@ public final class PlantUnit {
     public static List<Plant> growPlants(List<Plant> plantList, double year) {
 
         for (Plant plant : plantList) {
-            if (plant.getClass().equals(Tree.class)) {
+            if (plant instanceof Tree) {
                 growTree(plant, year);
-            } else if (plant.getClass().equals(Shrub.class)) {
+            } else if (plant instanceof Shrub) {
                 growShrub(plant, year);
             }
         }
