@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Plants" type="PlantsType"/>
+  <xs:complexType name="PlantsType">
+    <xs:sequence>
+      <xs:element type="categoryType" name="category" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="valueType" name="totalPlantHeight" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="valueType" name="Bush" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="valueType" name="Tree" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="plantType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="height"/>
+      <xs:element type="xs:string" name="age"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="categoryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Title"/>
+      <xs:element type="plantType" name="plant" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+    <xs:simpleType name="valueType">
+        <xs:restriction base="xs:double"/>
+    </xs:simpleType>
+</xs:schema>
