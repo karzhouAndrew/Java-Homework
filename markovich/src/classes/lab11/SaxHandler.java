@@ -3,10 +3,10 @@ package classes.lab11;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
 import static classes.lab11.GardenTags.*;
 
 import java.util.*;
-
 
 public class SaxHandler extends DefaultHandler {
 
@@ -14,12 +14,10 @@ public class SaxHandler extends DefaultHandler {
     private double treeAge, treeHeight, treeTrunk, shrubAge, shrubHeight;
     private boolean shrubBerries;
 
-    public List<Tree> treeList = new ArrayList<Tree>();
-    public List<Shrub> shrubList = new ArrayList<Shrub>();
+    public List<Plant> plantList = new ArrayList<Plant>();
 
     private Stack<String> elementStack = new Stack<String>();
     private Stack<Object> objectStack = new Stack<Object>();
-
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
@@ -39,9 +37,9 @@ public class SaxHandler extends DefaultHandler {
         this.elementStack.pop();
 
         if (TREE.toString().equalsIgnoreCase(qName)) {
-            treeList.add(new Tree(treeName, treeAge, treeHeight, treeTrunk));
+            plantList.add(new Tree(treeName, treeAge, treeHeight, treeTrunk));
         } else if (SHRUB.toString().equalsIgnoreCase(qName)) {
-            shrubList.add(new Shrub(shrubName, shrubAge, shrubHeight, shrubBerries, shrubFlowers));
+            plantList.add(new Shrub(shrubName, shrubAge, shrubHeight, shrubBerries, shrubFlowers));
         }
     }
 

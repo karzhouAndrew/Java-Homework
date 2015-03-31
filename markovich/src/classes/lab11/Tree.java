@@ -32,6 +32,18 @@ public class Tree extends Plant {
     }
 
     @Override
+    public void grow() {
+        double heightRate = SaxParserExample.getGrowthPeriod() * Tree.getHeightRatePerYear();
+        double newHeight = this.getHeight() + heightRate;
+        this.setHeight(newHeight);
+        double newAge = this.getAge() + SaxParserExample.getGrowthPeriod();
+        this.setAge(newAge);
+        double trunkRate = Tree.getTrunkRatePerYear() * SaxParserExample.getGrowthPeriod();
+        double newTrunk = this.getTrunk() + trunkRate;
+        this.setTrunk(newTrunk);
+    }
+
+    @Override
     public String toString() {
         return "Tree{" + super.toString() +
                 " trunk=" + trunk +

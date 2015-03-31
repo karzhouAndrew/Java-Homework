@@ -32,6 +32,9 @@ public class Plant {
         this.height = height;
     }
 
+    public void grow() {
+    }
+
     @Override
     public String toString() {
         return "name='" + name + '\'' +

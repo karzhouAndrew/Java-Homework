@@ -40,7 +40,7 @@ public class SaxParserExample {
             SaxHandler handler = new SaxHandler();
             saxParser.parse(xmlInput, handler);
 
-            List<Plant> plantList = mergePlants(handler.treeList, handler.shrubList);
+            List<Plant> plantList = handler.plantList;
 
             System.out.println("Total plants - " + plantsCounter(plantList));
             System.out.println("Total height plants - " + plantsHeightAmount(plantList));
@@ -51,11 +51,15 @@ public class SaxParserExample {
             System.out.println("Total plants after " + growthPeriod + " years - " + plantsCounter(plantList));
             System.out.println("Total height plants " + growthPeriod + " years - " + plantsHeightAmount(plantList));
 
-            ConverterToXML.contertToXML(PATH + "newGarden.xml", plantList);
-
+            ConverterDOM.convertToXMLDOM(PATH + "newGarden.xml", plantList);
 
         } catch (Throwable err) {
             err.printStackTrace();
         }
     }
+
+    public static double getGrowthPeriod() {
+        return growthPeriod;
+    }
+
 }
