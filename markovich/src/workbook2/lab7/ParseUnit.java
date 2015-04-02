@@ -9,6 +9,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
+import static workbook2.lab7.PointTags.*;
+
 public class ParseUnit {
     public static void parseFile(String xmlFilePath) {
         try {
@@ -19,7 +21,7 @@ public class ParseUnit {
 
             System.out.println(document.getDocumentElement().getNodeName());
 
-            NodeList nodeList = document.getElementsByTagName(PointTags.POINT.toString().toLowerCase());
+            NodeList nodeList = document.getElementsByTagName(POINT.toString().toLowerCase());
 
             for (int i = 0; i < nodeList.getLength(); i++) {
                 System.out.println("----------------------");
@@ -37,9 +39,9 @@ public class ParseUnit {
     }
 
     private static void readPoint(Element point) {
-        System.out.println(point.getElementsByTagName(PointTags.X.toString().toLowerCase()).item(0).getTextContent() +
-                point.getAttribute(PointTags.UNIT.toString().toLowerCase()) + ", " +
+        System.out.println(point.getElementsByTagName(X.toString().toLowerCase()).item(0).getTextContent() +
+                point.getAttribute(UNIT.toString().toLowerCase()) + ", " +
                 point.getElementsByTagName(PointTags.Y.toString().toLowerCase()).item(0).getTextContent() +
-                point.getAttribute(PointTags.UNIT.toString().toLowerCase()));
+                point.getAttribute(UNIT.toString().toLowerCase()));
     }
 }
