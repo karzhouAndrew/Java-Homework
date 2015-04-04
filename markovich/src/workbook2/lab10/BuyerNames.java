@@ -1,0 +1,5 @@
+package workbook2.lab10;
+
+public enum BuyerNames {
+    JAKUB, MAREK, RADKO, LADISLAV, TOMAS, MICHAL, ROMAN, ONDREY, ZBYNEK, LUKAS, PATRIK, JAROMIR, ALES, PETR
+}
