@@ -16,7 +16,6 @@ public class Checkout implements Runnable {
     public int getID() {
         return ID;
     }
-
     @Override
     public void run() {
         startWork();
