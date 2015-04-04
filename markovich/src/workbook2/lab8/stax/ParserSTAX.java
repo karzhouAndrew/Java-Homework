@@ -13,8 +13,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaxParser {
-    public static List<Point> staxParseXML(String xmlFile) {
+public class ParserSTAX {
+    public static List<Point> parseFile(String xmlFile) {
         List<Point> pointList = new ArrayList<Point>();
         Point point = null;
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
@@ -43,9 +43,18 @@ public class StaxParser {
                     }
                 }
             }
+
+            printPoints(pointList);
+
         } catch (FileNotFoundException | XMLStreamException e) {
             e.printStackTrace();
         }
         return pointList;
+    }
+
+    private static void printPoints(List<Point> pointList) {
+        for (Point point : pointList) {
+            System.out.println(point);
+        }
     }
 }
