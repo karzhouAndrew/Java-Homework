@@ -1,0 +1,5 @@
+package workbook2.workbook2Tasks.threadTask1;
+
+public enum Food {
+    MILK, FISH, MEAT, FRUIT, VEGETABLE, DRINK, ALCOHOL, JUICE, CANDIES, CHOCOLATE, CHEESE, BUTTER, WATER, BREAD, SUGAR, SALT, COFFEE, TEA
+}
