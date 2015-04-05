@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Leonid on 05.04.2015.
  */
-public class Check {
+public class CashVoucher {
     private int numberTicket;
     private String nameCashier;
     private Date date;

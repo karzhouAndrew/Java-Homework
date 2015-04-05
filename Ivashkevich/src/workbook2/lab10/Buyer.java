@@ -2,12 +2,11 @@ package workbook2.lab10;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /**
  * Created by Leonid on 03.04.2015.
  */
-public class Buyer implements Callable {
+public class Buyer implements Runnable {
 
     private static int count;
     private int id;
@@ -56,14 +55,15 @@ public class Buyer implements Callable {
         ticketWindow.sayWithBuyer(this);
     }
 
+
     @Override
-    public Object call() throws Exception {
+    public void run()  {
         getShopping();
         try {
             goToTicked();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
+

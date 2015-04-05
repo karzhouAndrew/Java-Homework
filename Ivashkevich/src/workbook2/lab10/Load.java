@@ -1,8 +1,6 @@
 package workbook2.lab10;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 
 /**
  * Напишите программу, моделирующую кассы в магазине. Существует несколько касс,
@@ -26,16 +24,16 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Load {
     public static void main(String[] args) throws InterruptedException {
-        LinkedBlockingQueue<TicketWindow> ticketWindowConcurrentLinkedQueue = new LinkedBlockingQueue<TicketWindow>();
-        ticketWindowConcurrentLinkedQueue.add(new TicketWindow());
-        ticketWindowConcurrentLinkedQueue.add(new TicketWindow());
-        ticketWindowConcurrentLinkedQueue.add(new TicketWindow());
+        BlockingQueue<TicketWindow>ticketWindowArrayBlockingQueue = new ArrayBlockingQueue<TicketWindow>(3);
+        ticketWindowArrayBlockingQueue.add(new TicketWindow());
+        ticketWindowArrayBlockingQueue.add(new TicketWindow());
+        ticketWindowArrayBlockingQueue.add(new TicketWindow());
 
-        ExecutorService pool = Executors.newFixedThreadPool(ticketWindowConcurrentLinkedQueue.size());
-        for (int i = 0; i < 1000; i++) {
-            TicketWindow t = ticketWindowConcurrentLinkedQueue.take();
+        ExecutorService pool = Executors.newFixedThreadPool(ticketWindowArrayBlockingQueue.size());
+        for (int i = 0; i < 10; i++) {
+            TicketWindow t = ticketWindowArrayBlockingQueue.take();
             pool.submit(new Buyer(t));
-            ticketWindowConcurrentLinkedQueue.put(t);
+            ticketWindowArrayBlockingQueue.put(t);
 
         }
         pool.shutdown();

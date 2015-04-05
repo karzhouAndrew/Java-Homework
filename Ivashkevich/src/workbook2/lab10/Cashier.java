@@ -16,21 +16,21 @@ public class Cashier {
     }
 
     public void cater(Buyer buyer) throws InterruptedException {
-        Check check = new Check();
-        check.setNumberTicket(buyer.getNumberTicket());
-        check.setNameCashier(nameCashier);
+        CashVoucher cashVoucher = new CashVoucher();
+        cashVoucher.setNumberTicket(buyer.getNumberTicket());
+        cashVoucher.setNameCashier(nameCashier);
         GregorianCalendar data = new GregorianCalendar();
         Date time = data.getTime();
-        check.setDate(time);
+        cashVoucher.setDate(time);
         Thread.sleep(buyer.getShoppingCart().size() * 50);
         Integer costOfPurchases = 0;
         for (Map.Entry entry : buyer.getShoppingCart().entrySet()) {
-            check.setShoppingList(entry.toString());
+            cashVoucher.setShoppingList(entry.toString());
             Integer cost = (Integer) entry.getValue();
             costOfPurchases += cost;
         }
-        check.setCostOfPurchases(costOfPurchases);
-        check.setSignature(buyer.getSignature());
-        System.out.println(check);
+        cashVoucher.setCostOfPurchases(costOfPurchases);
+        cashVoucher.setSignature(buyer.getSignature());
+        System.out.println(cashVoucher);
     }
 }
