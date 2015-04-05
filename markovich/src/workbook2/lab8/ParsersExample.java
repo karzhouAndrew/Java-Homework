@@ -10,11 +10,10 @@ import static workbook2.lab8.ParsersType.*;
 
 public class ParsersExample {
 
-    private static String XML_FILE_PATH = "markovich/src/workbook2/lab8/pointsList.xml";
-
     public static void main(String[] args) {
 
-        ParserFactory.getParser(DOM, XML_FILE_PATH);
+        Parser parser = ParserFactory.getParser(STAX);
+        parser.parseXML();
 
     }
 }

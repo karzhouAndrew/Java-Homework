@@ -1,4 +1,4 @@
-package workbook2.lab8.stax;
+package workbook2.lab8;
 
 public class Point {
     private String unit;

@@ -1,5 +1,9 @@
 package workbook2.lab8.stax;
 
+import workbook2.lab8.Parser;
+import workbook2.lab8.Point;
+import workbook2.lab8.UtilPrint;
+
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -13,38 +17,41 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserSTAX {
-    public static List<Point> parseFile(String xmlFile) {
+import static workbook2.lab8.PointTags.*;
+
+public class ParserSTAX implements Parser{
+    @Override
+    public List<Point> parseXML() {
         List<Point> pointList = new ArrayList<Point>();
         Point point = null;
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         try {
-            XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(xmlFile));
+            XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(XML_FILE_PATH));
             while (xmlEventReader.hasNext()) {
                 XMLEvent xmlEvent = xmlEventReader.nextEvent();
                 if (xmlEvent.isStartElement()) {
                     StartElement startElement = xmlEvent.asStartElement();
-                    if (startElement.getName().getLocalPart().equals("point")) {
+                    if (startElement.getName().getLocalPart().equals(POINT.toString().toLowerCase())) {
                         point = new Point();
-                        Attribute unitAttribute = startElement.getAttributeByName(new QName("unit"));
+                        Attribute unitAttribute = startElement.getAttributeByName(new QName(UNIT.toString().toLowerCase()));
                         point.setUnit(unitAttribute.getValue());
-                    } else if (startElement.getName().getLocalPart().equals("x")) {
+                    } else if (startElement.getName().getLocalPart().equals(X.toString().toLowerCase())) {
                         xmlEvent = xmlEventReader.nextEvent();
                         point.setCoordinateX(Integer.parseInt(xmlEvent.asCharacters().getData()));
-                    } else if (startElement.getName().getLocalPart().equals("y")) {
+                    } else if (startElement.getName().getLocalPart().equals(Y.toString().toLowerCase())) {
                         xmlEvent = xmlEventReader.nextEvent();
                         point.setCoordinateY(Integer.parseInt(xmlEvent.asCharacters().getData()));
                     }
                 }
                 if (xmlEvent.isEndElement()) {
                     EndElement endElement = xmlEvent.asEndElement();
-                    if (endElement.getName().getLocalPart().equals("point")) {
+                    if (endElement.getName().getLocalPart().equals(POINT.toString().toLowerCase())) {
                         pointList.add(point);
                     }
                 }
             }
 
-            printPoints(pointList);
+            UtilPrint.printList(pointList);
 
         } catch (FileNotFoundException | XMLStreamException e) {
             e.printStackTrace();
@@ -52,9 +59,4 @@ public class ParserSTAX {
         return pointList;
     }
 
-    private static void printPoints(List<Point> pointList) {
-        for (Point point : pointList) {
-            System.out.println(point);
-        }
-    }
 }

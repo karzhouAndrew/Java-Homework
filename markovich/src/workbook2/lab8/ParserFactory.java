@@ -5,17 +5,18 @@ import workbook2.lab8.sax.ParserSAX;
 import workbook2.lab8.stax.ParserSTAX;
 
 public class ParserFactory {
-    public static void getParser(ParsersType parserType, String xmlFilePath) {
+
+    public static Parser getParser(ParsersType parserType) {
         switch (parserType) {
             case DOM:
-                ParserDOM.parseFile(xmlFilePath);
-                break;
-            case STAX:
-                ParserSTAX.parseFile(xmlFilePath);
-                break;
+                return new ParserDOM();
+           case STAX:
+                return new ParserSTAX();
             case SAX:
-                ParserSAX.parseFile(xmlFilePath);
-                break;
+                return new ParserSAX();
+            default:
+                throw new IllegalArgumentException("Parser of this type does not exist");
         }
     }
+
 }
