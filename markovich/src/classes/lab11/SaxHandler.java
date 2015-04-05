@@ -10,8 +10,14 @@ import java.util.*;
 
 public class SaxHandler extends DefaultHandler {
 
-    private String treeName, shrubName, shrubFlowers;
-    private double treeAge, treeHeight, treeTrunk, shrubAge, shrubHeight;
+    private String treeName;
+    private String shrubName;
+    private String shrubFlowers;
+    private double treeAge;
+    private double treeHeight;
+    private double treeTrunk;
+    private double shrubAge;
+    private double shrubHeight;
     private boolean shrubBerries;
 
     public List<Plant> plantList = new ArrayList<Plant>();
