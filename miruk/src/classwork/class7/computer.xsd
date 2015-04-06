@@ -1,0 +1,79 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://tempuri.org/PurchaseOrderSchema.xsd"
+            targetNamespace="http://tempuri.org/PurchaseOrderSchema.xsd"
+            elementFormDefault="qualified">
+
+
+    <xsd:element name="Computer" type="ComputerType"/>
+    <xsd:complexType name='ComputerType'>
+        <xsd:sequence>
+           <xsd:element name="Id" type='xsd:integer'/>
+           <xsd:element name="Device" type="tns:DeviceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:element name="Device" type="tns:DeviceType"/>
+    <xsd:complexType name='DeviceType'>
+        <xsd:sequence>
+            <xsd:element name='Name' type='tns:NameType'/>
+            <xsd:element name='Origin' type='tns:OriginType'/>
+            <xsd:element name='Price' type='tns:PriceType'/>
+            <xsd:element name='Critical' type='tns:CriticalType'/>
+            <xsd:element name='Availability' type='tns:AvailabilityType'/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name='AvailabilityType'>
+            <xsd:sequence>
+                <xsd:element name='Peripherals' type='xsd:boolean'/>
+                <xsd:element name="energy " type="xsd:integer" minOccurs="0" maxOccurs="3000"/>
+                <xsd:element name="cooler" type="xsd:boolean"/>
+                <xsd:element name="Hardware" type="tns:HardwareType"/>
+            </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name='HardwareType'>
+        <xsd:sequence>
+            <xsd:element name='IO_device' type='xsd:boolean'/>
+            <xsd:element name='multimedia' type='xsd:boolean'/>
+
+            <xsd:element name="port">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:length value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name='NameType'>
+        <xsd:restriction base='xsd:string'>
+            <xsd:pattern value='\w{200}'/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name='OriginType'>
+        <xsd:restriction base='xsd:string'>
+            <xsd:pattern value='\w{200}'/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name='CriticalType'>
+        <xsd:restriction base='xsd:integer'>
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name='PriceType'>
+        <xsd:restriction base='xsd:integer'>
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+</xsd:schema>
