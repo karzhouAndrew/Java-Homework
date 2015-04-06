@@ -24,8 +24,6 @@ public class CheckpointPool {
             return queue.poll();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            semaphore.release();
         }
         return null;
     }
