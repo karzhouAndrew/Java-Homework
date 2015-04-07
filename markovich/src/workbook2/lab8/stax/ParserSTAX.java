@@ -51,8 +51,6 @@ public class ParserSTAX implements Parser{
                 }
             }
 
-            UtilPrint.printList(pointList);
-
         } catch (FileNotFoundException | XMLStreamException e) {
             e.printStackTrace();
         }

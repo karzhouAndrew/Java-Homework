@@ -43,8 +43,6 @@ public class ParserDOM implements Parser {
                 }
             }
 
-            UtilPrint.printList(pointList);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

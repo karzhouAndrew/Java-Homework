@@ -1,6 +1,8 @@
 package workbook2.lab8;
 
-import static workbook2.lab8.ParsersType.*;
+import java.util.List;
+
+import static workbook2.lab8.ParsersTypeEnum.*;
 
 /**
  * Напишите программу, которая будет разбирать xml файл, сделанный в предыдущих заданиях с помощью DOM,
@@ -12,8 +14,10 @@ public class ParsersExample {
 
     public static void main(String[] args) {
 
-        Parser parser = ParserFactory.getParser(STAX);
-        parser.parseXML();
+        Parser parser = ParserFactory.getParser(SAX);
+        List<Point> pointList = parser.parseXML();
+
+        UtilPrint.printList(pointList);
 
     }
 }

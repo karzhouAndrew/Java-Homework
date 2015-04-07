@@ -24,8 +24,6 @@ public class ParserSAX implements Parser{
             saxParser.parse(new File(XML_FILE_PATH), saxHandler);
             pointList = saxHandler.getPointList();
 
-            UtilPrint.printList(pointList);
-
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
