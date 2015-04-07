@@ -10,13 +10,7 @@ public class Tree extends Plant {
         this.trunk = trunk;
     }
 
-    public Tree(String name, double age, double height) {
-        super(name, age, height);
-    }
-
-    public Tree(String name, double age, double height, double trunk) {
-        super(name, age, height);
-        this.trunk = trunk;
+    public Tree() {
     }
 
     public double getTrunk() {

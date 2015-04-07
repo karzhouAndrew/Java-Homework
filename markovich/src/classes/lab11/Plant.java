@@ -6,10 +6,17 @@ public class Plant {
     private double age;
     private double height;
 
+    public Plant() {
+    }
+
     public Plant(String name, double age, double height) {
         this.name = name;
         this.age = age;
         this.height = height;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {

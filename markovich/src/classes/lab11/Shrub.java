@@ -6,13 +6,14 @@ public class Shrub extends Plant {
     private String flowers;
     private static final double heightRatePerYear = 0.2;
 
-    public Shrub(String name, double age, double height) {
-        super(name, age, height);
+    public Shrub() {
     }
 
-    public Shrub(String name, double age, double height, boolean berries, String flowers) {
-        super(name, age, height);
+    public void setBerries(boolean berries) {
         this.berries = berries;
+    }
+
+    public void setFlowers(String flowers) {
         this.flowers = flowers;
     }
 

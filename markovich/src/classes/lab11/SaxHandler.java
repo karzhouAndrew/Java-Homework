@@ -10,30 +10,22 @@ import java.util.*;
 
 public class SaxHandler extends DefaultHandler {
 
-    private String treeName;
-    private String shrubName;
-    private String shrubFlowers;
-    private double treeAge;
-    private double treeHeight;
-    private double treeTrunk;
-    private double shrubAge;
-    private double shrubHeight;
-    private boolean shrubBerries;
-
     public List<Plant> plantList = new ArrayList<Plant>();
 
     private Stack<String> elementStack = new Stack<String>();
     private Stack<Object> objectStack = new Stack<Object>();
+    Plant tree;
+    Plant shrub;
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
         this.elementStack.push(qName);
 
         if (TREE.toString().equalsIgnoreCase(qName)) {
-            Tree tree = new Tree("", 0, 0);
+            tree = new Tree();
             this.objectStack.push(tree);
         } else if (SHRUB.toString().equalsIgnoreCase(qName)) {
-            Shrub shrub = new Shrub("", 0, 0);
+            shrub = new Shrub();
             this.objectStack.push(shrub);
         }
     }
@@ -43,9 +35,9 @@ public class SaxHandler extends DefaultHandler {
         this.elementStack.pop();
 
         if (TREE.toString().equalsIgnoreCase(qName)) {
-            plantList.add(new Tree(treeName, treeAge, treeHeight, treeTrunk));
+            plantList.add(tree);
         } else if (SHRUB.toString().equalsIgnoreCase(qName)) {
-            plantList.add(new Shrub(shrubName, shrubAge, shrubHeight, shrubBerries, shrubFlowers));
+            plantList.add(shrub);
         }
     }
 
@@ -54,23 +46,23 @@ public class SaxHandler extends DefaultHandler {
         String value = new String(ch, start, length).trim();
 
         if (NAME.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
-            treeName = value;
+            tree.setName(value);
         } else if (AGE.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
-            treeAge = Double.parseDouble(value);
+            tree.setAge(Double.parseDouble(value));
         } else if (HEIGHT.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
-            treeHeight = Double.parseDouble(value);
+            tree.setHeight(Double.parseDouble(value));
         } else if (TRUNK.toString().equalsIgnoreCase(currentElement()) && TREE.toString().equalsIgnoreCase(currentElementParent())) {
-            treeTrunk = Double.parseDouble(value);
+            ((Tree) tree).setTrunk(Double.parseDouble(value));
         } else if (NAME.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
-            shrubName = value;
+            shrub.setName(value);
         } else if (AGE.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
-            shrubAge = Double.parseDouble(value);
+            shrub.setAge(Double.parseDouble(value));
         } else if (HEIGHT.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
-            shrubHeight = Double.parseDouble(value);
+            shrub.setHeight(Double.parseDouble(value));
         } else if (BERRIES.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
-            shrubBerries = Boolean.parseBoolean(value);
+            ((Shrub) shrub).setBerries(Boolean.parseBoolean(value));
         } else if (FLOWERS.toString().equalsIgnoreCase(currentElement()) && SHRUB.toString().equalsIgnoreCase(currentElementParent())) {
-            shrubFlowers = value;
+            ((Shrub) shrub).setFlowers(value);
         }
     }
 
