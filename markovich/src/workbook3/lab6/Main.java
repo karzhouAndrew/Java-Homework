@@ -16,18 +16,17 @@ public class Main {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
 
-    private static final String SQL_INSERT_INTO = "INSERT INTO expenses (paydate, receiver, value) VALUES (? , ?, ?)";
+    private static final String SQL_INSERT_INTO = "INSERT INTO expenses (paydate, receiver, value) VALUES (?, ?, ?)";
     private static final String SQL_SHOW_TABLE = "SELECT paydate, value, nameReceiver FROM expenses,receivers WHERE receiver=receivers.idReceiver";
 
-    private static Connection conn = null;
-    private static PreparedStatement preparedStatement = null;
+    private static Connection conn;
+    private static PreparedStatement preparedStatement;
+    private static ResultSet result;
 
     public static void main(String[] args) {
 
         try {
             Class.forName(JDBC_DRIVER);
-            System.out.println("Connection is OK!");
-
             conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
             preparedStatement = conn.prepareStatement(SQL_INSERT_INTO);
             preparedStatement.setDate(1, Date.valueOf("2011-06-30"));
@@ -40,7 +39,7 @@ public class Main {
             preparedStatement.setInt(3, 8888);
             preparedStatement.executeUpdate();
 
-            ResultSet result = preparedStatement.executeQuery(SQL_SHOW_TABLE);
+            result = preparedStatement.executeQuery(SQL_SHOW_TABLE);
 
             while (result.next()) {
                 System.out.println(result.getDate(1) + " " + result.getInt(2) + " " + result.getString(3));
@@ -54,6 +53,12 @@ public class Main {
             try {
                 if (conn != null) {
                     conn.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (result != null) {
+                    result.close();
                 }
             } catch (SQLException se) {
                 se.printStackTrace();
