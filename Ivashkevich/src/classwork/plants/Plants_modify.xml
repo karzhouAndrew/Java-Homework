@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Plants xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Plants.xsd">
+    <category>
+        <Title>Tree</Title>
+       <plant>
+           <name>buk</name>
+           <height>4.5</height>
+           <age>3.0</age>
+       </plant>
+        <plant>
+            <name>oak</name>
+            <height>9.0</height>
+            <age>6.0</age>
+        </plant>
+    </category>
+    <category>
+        <Title>Bush</Title>
+        <plant>
+            <name>lilac</name>
+            <height>0.4</height>
+            <age>2.5</age>
+        </plant>
+        <plant>
+            <name>currant</name>
+            <height>7.3</height>
+            <age>4.2</age>
+        </plant>
+        <plant>
+            <name>gooseberry</name>
+            <height>3.1</height>
+            <age>0.2</age>
+        </plant>
+    </category>
+<totalPlantHeight>24.3</totalPlantHeight><Bush>3</Bush><Tree>2</Tree></Plants>
