@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<pointsList
+        xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="Point.xsd">
+    <point unit="cm">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit="mm">
+        <x>9</x>
+        <y>3</y>
+    </point>
+    <point unit="px">
+        <x>1080</x>
+        <y>1920</y>
+    </point>
+</pointsList>
