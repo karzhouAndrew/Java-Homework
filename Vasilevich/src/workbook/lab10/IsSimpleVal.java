@@ -12,12 +12,12 @@ public class IsSimpleVal {
         int val = rand.nextInt(100);
         int countVal = Math.round(val / 2) + 1;
         System.out.println("Value = " + val);
-        for (int ind = 2; ind < countVal; ind++) {
-            if (val % ind == 0) {
-                System.out.println("Value is not simple. It divide with " + ind);
+        for (int i = 2; i < countVal; i++) {
+            if (val % i == 0) {
+                System.out.println("Value is not simple. It divide with " + i);
                 break;
             } else {
-                if (ind == (countVal - 1)) {
+                if (i == (countVal - 1)) {
                     System.out.println("Value is simple!");
                 }
             }

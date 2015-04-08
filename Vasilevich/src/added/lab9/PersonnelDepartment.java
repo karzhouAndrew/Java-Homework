@@ -36,12 +36,12 @@ public class PersonnelDepartment {
 
         personalDB = new Employee[staffSize];
         //создание учетной записи директора
-        for (int ind = 0; ind < directorCount; ind++) {
+        for (int i = 0; i < directorCount; i++) {
             assignDirector();
         }
 
         //создание учетной записи меджеров по продажам
-        for (int ind = 0; ind < salesManagerCount; ind++) {
+        for (int i = 0; i < salesManagerCount; i++) {
             assignSalesManager();
         }
 
@@ -51,12 +51,12 @@ public class PersonnelDepartment {
         int[] teamLeadArr = new int[teamLeadCount];
 
         //создание учетных записей тим лидов
-        for (int ind = 0; ind < teamLeadCount; ind++) {
-            teamLeadArr[ind] = assignTeamLead(random.nextInt(allDevelopersCount - 1) + 1);
+        for (int i = 0; i < teamLeadCount; i++) {
+            teamLeadArr[i] = assignTeamLead(random.nextInt(allDevelopersCount - 1) + 1);
         }
 
         //создание учетных записей разработчиков
-        for (int ind = 0; ind < developerCount; ind++) {
+        for (int i = 0; i < developerCount; i++) {
             assignDeveloper();
         }
 
@@ -90,14 +90,14 @@ public class PersonnelDepartment {
 
     // проверка на наличие учетной записи директора. Он должен быть тоьлко 1
     private int findDirector() {
-        int ind = 0;
+        int i = 0;
         for (Employee employee : personalDB) {
             if (employee != null) {
                 if (employee.getClass().equals(Director.class)) {
                     System.out.println("employee Dir = " + employee.toString());
-                    return ind;
+                    return i;
                 }
-                ind++;
+                i++;
             }
         }
         return -1;
@@ -132,10 +132,10 @@ public class PersonnelDepartment {
 
     // попытка добавления созданной учетной записи работника в список работников фирмы
     private int tryAddEmployeeToList(Employee employee) {
-        for (int ind = 0; ind < personalDB.length; ind++) {
-            if (personalDB[ind] == null) {
-                personalDB[ind] = employee;
-                return ind;
+        for (int i = 0; i < personalDB.length; i++) {
+            if (personalDB[i] == null) {
+                personalDB[i] = employee;
+                return i;
             }
         }
         return -1;
@@ -155,8 +155,8 @@ public class PersonnelDepartment {
 
     // проверка добаляемой записи на уникальность в списке (таких быть не должно)
     private boolean checkTeamCandidate(int[] team, int teamCandidate) {
-        for (int ind : team) {
-            if (ind == teamCandidate) {
+        for (int i : team) {
+            if (i == teamCandidate) {
                 return false;
             }
         }
@@ -182,9 +182,9 @@ public class PersonnelDepartment {
     @Override
     public String toString() {
         StringBuilder departmentStr = new StringBuilder();
-        int ind = 1;
+        int i = 1;
         for (Employee employee : personalDB) {
-            departmentStr.append(ind++ + ". ").append(employee).append('\n');
+            departmentStr.append(i++ + ". ").append(employee).append('\n');
 
         }
 

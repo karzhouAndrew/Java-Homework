@@ -21,12 +21,12 @@ public class FindMinMaxSum {
         int maxInd = 0;
         int sum = 0;
 
-        for (int ind = 0; ind < lenMatrix; ind++) {
-            if (matrix[ind] < matrix[minInd]) {
-                minInd = ind;
+        for (int i = 0; i < lenMatrix; i++) {
+            if (matrix[i] < matrix[minInd]) {
+                minInd = i;
             } else {
-                if (matrix[ind] > matrix[maxInd]) {
-                    maxInd = ind;
+                if (matrix[i] > matrix[maxInd]) {
+                    maxInd = i;
                 }
             }
         }
@@ -39,8 +39,8 @@ public class FindMinMaxSum {
         System.out.println("");
         System.out.println("Range = (" + minInd + ", " + maxInd + ")");
 
-        for (int ind = minInd + 1; ind < maxInd; ind++) {
-            sum += matrix[ind];
+        for (int i = minInd + 1; i < maxInd; i++) {
+            sum += matrix[i];
         }
         System.out.println("Sum = " + sum);
     }

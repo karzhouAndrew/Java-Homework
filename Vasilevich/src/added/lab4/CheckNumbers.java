@@ -20,8 +20,8 @@ public class CheckNumbers {
     private static int magicVals[] = {781, 302, 409, 941};
 
     private static boolean checkMagicNums(int checkVal) {
-        for (int ind = 0; ind < magicVals.length; ind++) {
-            if (checkVal == magicVals[ind]) {
+        for (int i = 0; i < magicVals.length; i++) {
+            if (checkVal == magicVals[i]) {
                 return true;
             }
         }
@@ -32,7 +32,6 @@ public class CheckNumbers {
         Random rand = new Random();
         int val = Math.abs(rand.nextInt(900)) + 100;
 
-//        val = 888;
         if (checkMagicNums(val)) {
             System.out.println("Число " + val + " -  магическое");
         } else {
@@ -40,25 +39,24 @@ public class CheckNumbers {
             int tmpVal = val;
             int mod = 10;
             int valArr[] = new int[count];
-            for (int ind = 0; ind < count; ind++) {
-                valArr[count - ind - 1] = (tmpVal % (int) Math.pow(mod, ind + 1));
-                tmpVal -= valArr[count - ind - 1];
-                valArr[count - ind - 1] /= (int) Math.pow(mod, ind);
+            for (int i = 0; i < count; i++) {
+                valArr[count - i - 1] = (tmpVal % (int) Math.pow(mod, i + 1));
+                tmpVal -= valArr[count - i - 1];
+                valArr[count - i - 1] /= (int) Math.pow(mod, i);
             }
 
             boolean resLuckEqual = true, resLuckGrow = true;
-            for (int ind = 0; ind < count - 1; ind++) {
-                if ((valArr[ind] + 1) != valArr[ind + 1]) {
+            for (int i = 0; i < count - 1; i++) {
+                if ((valArr[i] + 1) != valArr[i + 1]) {
                     resLuckGrow = false;
                 }
 
-                if (valArr[ind] != (valArr[ind + 1])) {
+                if (valArr[i] != (valArr[i + 1])) {
                     resLuckEqual = false;
                 }
 
                 if (!resLuckEqual && !resLuckGrow) {
                     break;
-
                 }
             }
             if (resLuckEqual) {

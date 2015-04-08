@@ -14,13 +14,13 @@ public class FindMaxVal {
         int maxVal = Integer.MAX_VALUE;
 
         System.out.print("Array = [");
-        for (int ind = 0; ind < randomValCount; ind++) {
-            arr[ind] = rand.nextInt(100);
-            if (maxVal < arr[ind]) {
-                maxVal = arr[ind];
+        for (int i = 0; i < randomValCount; i++) {
+            arr[i] = rand.nextInt(100);
+            if (maxVal < arr[i]) {
+                maxVal = arr[i];
             }
-            System.out.print(arr[ind]);
-            if (ind < (randomValCount - 1)) {
+            System.out.print(arr[i]);
+            if (i < (randomValCount - 1)) {
                 System.out.print(", ");
             } else {
                 System.out.print("]");

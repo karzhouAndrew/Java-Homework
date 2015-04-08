@@ -16,10 +16,10 @@ public class GetWordEnds {
     private static String getWordEnds(String strVal) {
         boolean lastCharWasEnd = false;
         String strResult = "";
-        for (int ind = 1; ind < strVal.length(); ind++) {
-            if (checkSymbol(strVal.charAt(ind))) {
+        for (int i = 1; i < strVal.length(); i++) {
+            if (checkSymbol(strVal.charAt(i))) {
                 if (!lastCharWasEnd) {
-                    strResult += strVal.charAt(ind - 1);
+                    strResult += strVal.charAt(i - 1);
                     lastCharWasEnd = true;
                 }
             } else {
@@ -35,8 +35,8 @@ public class GetWordEnds {
 
     private static boolean checkSymbol(char checkSymbol) {
         char endWordSymbols[] = {' ', ',', '.', '!', '?', '-', '(', ')'};
-        for (int ind = 0; ind < endWordSymbols.length; ind++) {
-            if (checkSymbol == endWordSymbols[ind]) {
+        for (int i = 0; i < endWordSymbols.length; i++) {
+            if (checkSymbol == endWordSymbols[i]) {
                 return true;
             }
         }

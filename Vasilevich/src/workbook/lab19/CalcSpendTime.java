@@ -19,7 +19,7 @@ public class CalcSpendTime {
 
         String strVal = "";
         long startTime = System.nanoTime();
-        for (int ind = 0; ind < counter; ind++) {
+        for (int i = 0; i < counter; i++) {
             strVal += "l";
         }
         startTime = System.nanoTime() - startTime;
@@ -30,7 +30,7 @@ public class CalcSpendTime {
 
         StringBuilder strVal = new StringBuilder();
         long startTime = System.nanoTime();
-        for (int ind = 0; ind < counter; ind++) {
+        for (int i = 0; i < counter; i++) {
             strVal.append("l");
         }
         startTime = System.nanoTime() - startTime;

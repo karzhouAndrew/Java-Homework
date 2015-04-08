@@ -19,8 +19,8 @@ public class CalcWords {
         WordManager wordManager = new WordManager(strVal);
         int wordsInSentense[] = calcWordSentenses();
         int orderedArr[] = new int[wordsInSentense.length];
-        for (int ind = 0; ind < wordsInSentense.length; ind++) {
-            orderedArr[ind] = ind;
+        for (int i = 0; i < wordsInSentense.length; i++) {
+            orderedArr[i] = i;
         }
 
         for (int indSntns = 0; indSntns < wordsInSentense.length - 1; indSntns++) {
@@ -37,8 +37,8 @@ public class CalcWords {
         }
 
         StringBuilder strResult = new StringBuilder();
-        for (int ind = 0; ind < wordsInSentense.length; ind++) {
-            strResult.append(wordManager.getSentense(orderedArr[ind]));
+        for (int i = 0; i < wordsInSentense.length; i++) {
+            strResult.append(wordManager.getSentense(orderedArr[i]));
         }
         System.out.println(strResult.toString());
     }
@@ -47,8 +47,8 @@ public class CalcWords {
         WordManager wordManager = new WordManager(strVal);
         int sentenceCount = wordManager.getSentenseCount();
         int wordCountArr[] = new int[sentenceCount];
-        for (int ind = 0; ind < sentenceCount; ind++) {
-            wordCountArr[ind] = wordManager.getNumWordsInSentense(ind);
+        for (int i = 0; i < sentenceCount; i++) {
+            wordCountArr[i] = wordManager.getNumWordsInSentense(i);
         }
 
         return wordCountArr;

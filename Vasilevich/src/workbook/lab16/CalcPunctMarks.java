@@ -13,8 +13,8 @@ public class CalcPunctMarks {
 
         char markArr[] = {',', '.', '!', '?'};
 
-        for (int ind = 0; ind < markArr.length; ind++) {
-            result += getCharCount(strVal, markArr[ind]);
+        for (int i = 0; i < markArr.length; i++) {
+            result += getCharCount(strVal, markArr[i]);
         }
 
         System.out.println("Punctuation marks count = " + result);
@@ -22,11 +22,11 @@ public class CalcPunctMarks {
 
     private static int getCharCount(String strVal, char searchVal) {
         int count = 0;
-        int ind = 0;
-        while (ind != -1) {
-            ind = strVal.indexOf(searchVal, ind);
-            if (ind != -1) {
-                ind++;
+        int i = 0;
+        while (i != -1) {
+            i = strVal.indexOf(searchVal, i);
+            if (i != -1) {
+                i++;
                 count++;
             }
         }

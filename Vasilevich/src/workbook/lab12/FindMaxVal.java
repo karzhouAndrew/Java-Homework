@@ -12,19 +12,19 @@ public class FindMaxVal {
         int markCount = 10;
 
         int markArr[] = new int[markCount];
-        for (int ind = 0; ind < markCount; ind++) {
-            markArr[ind] = rand.nextInt(11);
-            System.out.println("Mark[" + ind + "] = " + markArr[ind]);
+        for (int i = 0; i < markCount; i++) {
+            markArr[i] = rand.nextInt(11);
+            System.out.println("Mark[" + i + "] = " + markArr[i]);
         }
 
 
         int maxMark = markArr[0];
         int maxMarkInd = 0;
 
-        for (int ind = 1; ind < markCount; ind++) {
-            if (markArr[ind] > maxMark) {
-                maxMark = markArr[ind];
-                maxMarkInd = ind;
+        for (int i = 1; i < markCount; i++) {
+            if (markArr[i] > maxMark) {
+                maxMark = markArr[i];
+                maxMarkInd = i;
 
             }
         }

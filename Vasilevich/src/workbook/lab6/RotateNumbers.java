@@ -27,15 +27,15 @@ public class RotateNumbers {
         mod = 10;
         int resultNumber = 0;
         int arr[] = new int[arrLen];
-        for (int ind = 0; ind < arrLen; ind++) {
+        for (int i = 0; i < arrLen; i++) {
             if (res > mod) {
-                arr[arrLen - ind - 1] = res % mod;
-                res -= arr[arrLen - ind - 1];
-                arr[arrLen - ind - 1] = (arr[arrLen - ind - 1]) / (mod / 10);
-                resultNumber += arr[arrLen - ind - 1] * Math.pow(10, arrLen - ind - 1);
+                arr[arrLen - i - 1] = res % mod;
+                res -= arr[arrLen - i - 1];
+                arr[arrLen - i - 1] = (arr[arrLen - i - 1]) / (mod / 10);
+                resultNumber += arr[arrLen - i - 1] * Math.pow(10, arrLen - i - 1);
             } else {
-                arr[arrLen - ind - 1] = (res) / (mod / 10);
-                resultNumber += (arr[arrLen - ind - 1] * Math.pow(10, arrLen - ind - 1));
+                arr[arrLen - i - 1] = (res) / (mod / 10);
+                resultNumber += (arr[arrLen - i - 1] * Math.pow(10, arrLen - i - 1));
                 break;
             }
             mod *= 10;

@@ -13,7 +13,6 @@ public class Supermarket {
     private int buyerCount;
     private List<GoodItem> goodAssortment = new ArrayList<GoodItem>();
     private Queue<Buyer> buyerQueue;
-    private List<CashierWindow> cashierWindow;
 
     // касса магазина с наличными
     private volatile double supermarketCash;
@@ -58,11 +57,6 @@ public class Supermarket {
             }
             buyerQueue.add(new Buyer("Buyer " + buyerInd, buyerOrderList));
         }
-
-        cashierWindow = new ArrayList<CashierWindow>();
-        for (int i = 0; i < cashierWindowCount; i++) {
-            cashierWindow.add(new CashierWindow("Cashier " + i));
-        }
     }
 
     private synchronized void addMoneyToSupermarketCash(double money) {
@@ -103,7 +97,6 @@ public class Supermarket {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     public void checkSupermarketCashAfterWork() {

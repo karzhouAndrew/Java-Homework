@@ -14,10 +14,10 @@ public class FoundSumDivThree {
         System.out.println("Start value = " + startVal);
         int sum = 0;
         int countValToCalc = 7; // n первых чисел
-        for (int ind = startVal; ind < maxInt; ind++) {
-            if (ind % 3 == 0) {
-                sum += ind;
-                System.out.println("Value[" + ((ind - startVal) / 3) + "] = " + ind);
+        for (int i = startVal; i < maxInt; i++) {
+            if (i % 3 == 0) {
+                sum += i;
+                System.out.println("Value[" + ((i - startVal) / 3) + "] = " + i);
                 countValToCalc--;
                 if (countValToCalc == 0) {
                     break;
