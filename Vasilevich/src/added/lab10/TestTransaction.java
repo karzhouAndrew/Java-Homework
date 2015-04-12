@@ -8,15 +8,13 @@ package added.lab10;
  * когда выводится на консоль два сообщения:
  * 1) Transaction is started
  * 2) Transaction is ended
- *
  */
 public class TestTransaction {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
             TransactProc transaction = new TransactProc();
             transaction.analyzeTransactProc();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
 

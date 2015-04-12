@@ -33,12 +33,7 @@ public class CardProcess {
     }
 
     public boolean loginCard(short pinCode1ForCompare, short pinCode2ForCompare) {
-        if (pinCode1ForCompare == pinCode2ForCompare) {
-            isLoginNow = true;
-        } else {
-            isLoginNow = false;
-        }
-        return isLoginNow;
+        return (pinCode1ForCompare == pinCode2ForCompare) ? true : false;
     }
 
     public boolean logoffCard() {

@@ -27,7 +27,7 @@ public class WordManager {
 
     public int getNumWordsInSentense(int sentInd) {
         String strSent = sentense.split("\\.")[sentInd];
-        return strSent.trim().split(" +"). length;
+        return strSent.trim().split(" +").length;
     }
 
     public String getSentense(int sentInd) {

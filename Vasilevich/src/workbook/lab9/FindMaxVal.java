@@ -20,7 +20,7 @@ public class FindMaxVal {
                 maxVal = arr[i];
             }
             System.out.print(arr[i]);
-            if (i < (randomValCount - 1)) {
+            if (i < randomValCount - 1) {
                 System.out.print(", ");
             } else {
                 System.out.print("]");

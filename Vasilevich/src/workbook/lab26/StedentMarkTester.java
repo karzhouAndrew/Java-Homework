@@ -12,10 +12,10 @@ public class StedentMarkTester {
         StudentList studentList = new StudentList();
         int studentCount = 7;
         Random random = new Random();
-        for (int studentInd = 0; studentInd < studentCount; studentInd++){
+        for (int studentInd = 0; studentInd < studentCount; studentInd++) {
             int markCount = random.nextInt(15);
             int[] marks = new int[markCount];
-            for (int markInd = 0; markInd < markCount; markInd++){
+            for (int markInd = 0; markInd < markCount; markInd++) {
                 marks[markInd] = random.nextInt(7) + 4;
             }
             studentList.addStudent(LastNameEnum.generateLastName(), marks);

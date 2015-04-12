@@ -20,11 +20,11 @@ public class CalcWordCount {
         int wordCount = 0;
         for (int i = 0; i < strVal.length(); i++) {
             if (checkSymbol(strVal.charAt(i))) {
-                if (!lastCharWasEnd){
+                if (!lastCharWasEnd) {
                     wordCount++;
                     lastCharWasEnd = true;
                 }
-            }else{
+            } else {
                 lastCharWasEnd = false;
             }
         }

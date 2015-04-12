@@ -9,7 +9,7 @@ public enum LastNameEnum {
     VASILEVICH, SAVKO, SAVITSKI, ASEDOVSKI, ZIMOGOROV, SHUSTOVSKI, ANDREEV, MASLOVSKI, IVANOV, PETROV, SIDOROV,
     MALCHENKOV;
 
-    public static String generateLastName(){
+    public static String generateLastName() {
         Random random = new Random();
         return LastNameEnum.values()[random.nextInt(LastNameEnum.values().length)].toString();
     }

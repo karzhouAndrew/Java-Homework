@@ -33,8 +33,7 @@ public class CalcSpendTime {
         for (int i = 0; i < counter; i++) {
             strVal.append("l");
         }
-        startTime = System.nanoTime() - startTime;
-        return startTime;
+        return System.nanoTime() - startTime;
     }
 
 }

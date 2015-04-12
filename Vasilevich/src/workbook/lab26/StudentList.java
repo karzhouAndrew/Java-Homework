@@ -9,15 +9,15 @@ import java.util.List;
 public class StudentList {
     private List<Student> studentArr = new ArrayList();
 
-    public void addStudent(String lastName, int[] marks){
+    public void addStudent(String lastName, int[] marks) {
         Student student = new Student();
         student.setLastName(lastName);
         student.addMarks(marks);
         studentArr.add(student);
     }
 
-    public void checkStudents(){
-        for(Student student : studentArr){
+    public void checkStudents() {
+        for (Student student : studentArr) {
             student.checkMarks();
         }
     }

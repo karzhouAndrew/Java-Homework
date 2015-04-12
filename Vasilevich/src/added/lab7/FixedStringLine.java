@@ -3,7 +3,7 @@ package added.lab7;
 /**
  * Created by Sam on 21.02.2015.
  * Заменить в строке все вхождения 'child' на 'children'. Удалить из текста все
- символы, являющиеся цифрами.
+ * символы, являющиеся цифрами.
  */
 public class FixedStringLine {
     public static void main(String[] args) {

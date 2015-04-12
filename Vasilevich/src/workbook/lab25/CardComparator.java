@@ -7,8 +7,6 @@ import java.util.Comparator;
  */
 public class CardComparator implements Comparator<CreditCard> {
     public int compare(CreditCard card1, CreditCard card2) {
-        return (int) (card1.getCardNumber() - card2.getCardNumber());
+        return Long.compare(card1.getCardNumber(), card2.getCardNumber());
     }
-
-
 }

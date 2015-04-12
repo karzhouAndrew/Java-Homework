@@ -2,7 +2,7 @@ package added.lab5;
 
 /**
  * Created by Sam on 21.02.2015.
-*/
+ */
 public class CubeManager {
 
     public boolean calcCubeParams(CubeLib cube) {

@@ -22,21 +22,21 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public boolean addMark(int mark){
+    public boolean addMark(int mark) {
         return marksArr.add(mark);
     }
 
-    public void addMarks(int[] marks){
+    public void addMarks(int[] marks) {
 
-        for(int mark : marks) {
+        for (int mark : marks) {
             marksArr.add(mark);
         }
     }
 
-    public void checkMarks(){
+    public void checkMarks() {
         Iterator iterator = marksArr.iterator();
-        while (iterator.hasNext()){
-            if ((Integer)iterator.next() < minGoodMark){
+        while (iterator.hasNext()) {
+            if ((Integer) iterator.next() < minGoodMark) {
                 iterator.remove();
             }
         }

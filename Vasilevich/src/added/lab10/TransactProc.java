@@ -9,18 +9,17 @@ import java.lang.reflect.Method;
 public class TransactProc {
 
 
-    public void analyzeTransactProc()  throws IllegalAccessException, InstantiationException, InvocationTargetException {
-        Class <TransactOperation> clazz = TransactOperation.class;
-        for (Method method : clazz.getMethods()){
+    public void analyzeTransactProc() throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        Class<TransactOperation> clazz = TransactOperation.class;
+        for (Method method : clazz.getMethods()) {
 
-            if (method.isAnnotationPresent(Transaction.class)){
+            if (method.isAnnotationPresent(Transaction.class)) {
                 System.out.println("Transaction started");
                 method.invoke(clazz.newInstance(), null);
                 System.out.println("Transaction finished");
                 return;
             }
         }
-
 
 
     }

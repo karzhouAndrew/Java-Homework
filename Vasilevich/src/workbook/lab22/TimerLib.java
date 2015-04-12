@@ -11,15 +11,8 @@ public class TimerLib {
     private final int SECONDS_IN_MINUTE = 60;
     private final int SECONDS_IN_HOUR = 60 * 60;
 
-    private int sign(int val){
-        if (val > 0){
-            return 1;
-        }else{
-            if (val < 0){
-                return -1;
-            }
-        }
-        return 0;
+    private int sign(int val) {
+        return (val < 0) ? -1 : ((val == 0) ? 0 : 1);
     }
 
     public TimerLib(int seconds, int minutes, int hours) {
@@ -32,15 +25,15 @@ public class TimerLib {
         this.seconds = seconds;
     }
 
-    public int getTotalSecons(){
+    public int getTotalSecons() {
         return (seconds + minutes * SECONDS_IN_MINUTE + hours * SECONDS_IN_HOUR);
     }
 
-    public int compareTo(int seconds){
-        return sign(getTotalSecons()- seconds);
+    public int compareTo(int seconds) {
+        return sign(getTotalSecons() - seconds);
     }
 
-    public int compareTo(int seconds, int minutes, int hours){
+    public int compareTo(int seconds, int minutes, int hours) {
         return sign(getTotalSecons() - (seconds + minutes * SECONDS_IN_MINUTE + hours * SECONDS_IN_HOUR));
     }
 
