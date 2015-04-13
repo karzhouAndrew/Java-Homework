@@ -16,10 +16,10 @@ FROM expenses WHERE paydate = (
 -- Вывести наибольший платеж за тот день, когда сумма платежей была наибольшей.
 SELECT * FROM (
 		SELECT paydate pd2, value val FROM expenses exp2, (
-				SELECT exp1.pd pd1, MAX(exp1.sumval) FROM (
-						SELECT paydate pd, SUM(value) sumval 
+				SELECT exp1.pd pd1, exp1.sumval FROM (
+						SELECT paydate pd, SUM(value) sumval
 						FROM expenses exp1 GROUP BY pd
-				) exp1
+				) exp1 ORDER BY exp1.sumval DESC LIMIT 1
 		) exp3 
 		WHERE paydate = exp3.pd1
 ) exp4 ORDER BY exp4.val DESC LIMIT 1;
