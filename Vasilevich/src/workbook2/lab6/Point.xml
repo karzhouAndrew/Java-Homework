@@ -1,0 +1,16 @@
+<?xml version = "1.0" ?>
+
+<pointlist xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com Point.xsd">
+    <point unit="mm">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit="px">
+        <x>9</x>
+        <y>3</y>
+    </point>
+    <point unit="cm">
+        <x>6</x>
+        <y>2</y>
+    </point>
+</pointlist>
