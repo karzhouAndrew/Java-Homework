@@ -26,17 +26,13 @@ public class GreetingBrowserServlet extends HttpServlet {
         out.println("<body><div align='center' style='margin-top: 300px;'>");
         if (userAgent.contains("MSIE") || userAgent.contains("IE")) {
             out.println("Welcome IE user" + "<br>");
-        }
-        if (userAgent.contains("Safari")) {
+        } else if (userAgent.contains("Safari")) {
             out.println("Welcome Safari user" + "<br>");
-        }
-        if (userAgent.contains("Opera") || userAgent.contains("OPR")) {
+        } else if (userAgent.contains("Opera") || userAgent.contains("OPR")) {
             out.println("Welcome Opera user" + "<br>");
-        }
-        if (userAgent.contains("Chrome")) {
+        } else if (userAgent.contains("Chrome")) {
             out.println("Welcome Google Chrome user" + "<br>");
-        }
-        if (userAgent.contains("Firefox")) {
+        } else if (userAgent.contains("Firefox")) {
             out.println("Welcome Mozilla Firefox user" + "<br>");
         }
         out.println("</div></body></html>");
