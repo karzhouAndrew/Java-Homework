@@ -17,20 +17,20 @@ import static jdbc.DBUtils.*;
  */
 
 public class JDBCServlet extends HttpServlet {
-    private static String db_url;
-    private static String jdbc_driver;
-    private static String db_username;
-    private static String db_password;
-    private static String sql_show_query;
+    private static String dbUrl;
+    private static String jdbcDriver;
+    private static String dbUsername;
+    private static String dbPassword;
+    private static String sqlShowQuery;
 
     @Override
     public void init() throws ServletException {
         ServletConfig servletConfig = getServletConfig();
-        db_url = servletConfig.getInitParameter("db_url");
-        jdbc_driver = servletConfig.getInitParameter("jdbc_driver");
-        db_username = servletConfig.getInitParameter("db_username");
-        db_password = servletConfig.getInitParameter("db_password");
-        sql_show_query = servletConfig.getInitParameter("sql_show_query");
+        dbUrl = servletConfig.getInitParameter("dbUrl");
+        jdbcDriver = servletConfig.getInitParameter("jdbcDriver");
+        dbUsername = servletConfig.getInitParameter("dbUsername");
+        dbPassword = servletConfig.getInitParameter("dbPassword");
+        sqlShowQuery = servletConfig.getInitParameter("sqlShowQuery");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,10 +46,10 @@ public class JDBCServlet extends HttpServlet {
         out.println("<caption>Expenses table</caption>");
 
         try {
-            connection = getDBConnection(jdbc_driver, db_url, db_username, db_password);
+            connection = getDBConnection(jdbcDriver, dbUrl, dbUsername, dbPassword);
             statement = connection.createStatement();
 
-            result = statement.executeQuery(sql_show_query);
+            result = statement.executeQuery(sqlShowQuery);
 
             out.println("<th>");
             out.println("<td>Date</td>");
@@ -65,7 +65,6 @@ public class JDBCServlet extends HttpServlet {
                 out.println("<td>" + result.getString(4) + "</td>");
                 out.println("</tr>");
             }
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {

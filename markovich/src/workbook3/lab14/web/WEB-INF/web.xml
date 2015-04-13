@@ -7,24 +7,26 @@
         <servlet-name>JDBCServlet</servlet-name>
         <servlet-class>jdbc.JDBCServlet</servlet-class>
         <init-param>
-            <param-name>db_url</param-name>
+            <param-name>dbUrl</param-name>
             <param-value>jdbc:mysql://localhost:3306/workbook3ver1</param-value>
         </init-param>
         <init-param>
-            <param-name>jdbc_driver</param-name>
+            <param-name>jdbcDriver</param-name>
             <param-value>com.mysql.jdbc.Driver</param-value>
         </init-param>
         <init-param>
-            <param-name>db_username</param-name>
+            <param-name>dbUsername</param-name>
             <param-value>root</param-value>
         </init-param>
         <init-param>
-            <param-name>db_password</param-name>
+            <param-name>dbPassword</param-name>
             <param-value>admin</param-value>
         </init-param>
         <init-param>
-            <param-name>sql_show_query</param-name>
-            <param-value>SELECT idExpense, paydate, value, nameReceiver FROM expenses, receivers WHERE receiver=receivers.idReceiver</param-value>
+            <param-name>sqlShowQuery</param-name>
+            <param-value>SELECT idExpense, paydate, value, nameReceiver FROM expenses, receivers WHERE
+                receiver=receivers.idReceiver
+            </param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
