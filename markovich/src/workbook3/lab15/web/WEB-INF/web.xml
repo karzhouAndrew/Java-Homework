@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>controller.HandlerServlet</servlet-class>
+        <init-param>
+            <param-name>dbUrl</param-name>
+            <param-value>jdbc:mysql://localhost:3306/workbook3ver1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriver</param-name>
+            <param-value>com.mysql.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUsername</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>sqlShowQuery</param-name>
+            <param-value>SELECT idExpense, paydate, value, nameReceiver FROM expenses, receivers WHERE
+                receiver=receivers.idReceiver
+            </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+</web-app>
