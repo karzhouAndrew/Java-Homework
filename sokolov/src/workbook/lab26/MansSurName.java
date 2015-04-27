@@ -1,0 +1,6 @@
+package workbook.lab26;
+
+public enum MansSurName {
+    SOKOLOV, IVANOV, GONCHAROV, SIDOROV, TANANAJKO, KRIVOROT, NEMOGAJ, KIPELOV, LI, KROPOTKIN,
+    UILLIS, SMIT, ENSHTEIN
+}
