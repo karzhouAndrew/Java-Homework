@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<plants>
+	<tree>   		
+		<name>Oak</name>
+		<height>2.5</height>
+		<age>2</age>
+	</tree>
+	<bush>
+		<name>Rose</name>
+		<berries>false</berries>
+		<inflorescence>large pink</inflorescence>
+		<age>1</age>
+		<height>0.8</height>
+	</bush>
+	<tree>   		
+		<name>Pine</name>
+		<height>3</height>
+		<age>1.5</age>
+	</tree>
+	<tree>   		
+		<name>Maple</name>
+		<height>2</height>
+		<age>1.5</age>
+	</tree>
+	<bush>
+		<name>Raspberry</name>
+		<berries>true</berries>
+		<height>1.1</height>
+		<inflorescence>small white</inflorescence>
+		<age>1</age>
+	</bush>
+</plants>
